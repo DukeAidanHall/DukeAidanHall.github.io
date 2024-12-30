@@ -1,246 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
-    *********************************************************************
-    * Aidan Hall Portfolio Website                                      *
-    * Detailed HTML/CSS/JS Single-File Page                             *
-    *********************************************************************
-  -->
-
   <meta charset="UTF-8" />
   <meta name="description" content="Aidan Hall Portfolio - Advanced Design and Interactivity" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aidan Hall | Advanced Portfolio</title>
+  <title>Aidan Hall | Portfolio</title>
 
-  <!-- 
-    *********************************************************************
-    * External Fonts
-    *********************************************************************
-  -->
+  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
     rel="stylesheet"
   />
 
-  <!-- 
-    *********************************************************************
-    * GSAP (GreenSock) for Animations
-    * Note: Using jsDelivr CDN
-    *********************************************************************
-  -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-
-  <!-- 
-    *********************************************************************
-    * AOS (Animate on Scroll) for Scroll Animations
-    * Note: Using CDN, requires AOS CSS as well
-    *********************************************************************
-  -->
+  <!-- AOS (Animate on Scroll) CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
   <style>
-    /***********************************************************************
-    ***********************************************************************
-    ** GLOBAL STYLES, RESETS, AND BASIC FOUNDATION
-    ***********************************************************************
-    ***********************************************************************/
+    /* Reset & Global */
     * {
-      margin: 0; 
-      padding: 0; 
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
-      scroll-behavior: smooth; /* Smooth scrolling for all browsers */
+      scroll-behavior: smooth;
     }
-
     html, body {
       width: 100%;
       height: 100%;
+      background: #f9f9f9;
+      color: #333;
       overflow-x: hidden;
     }
-
     body {
-      color: #333;
-      background: #f9f9f9;
       line-height: 1.6;
     }
-
     a {
-      text-decoration: none;
       color: inherit;
-      transition: color 0.3s ease;
+      text-decoration: none;
+      transition: color 0.3s;
       cursor: pointer;
     }
-
+    a:hover {
+      color: #007acc;
+    }
     h1, h2, h3 {
       margin-bottom: 0.5rem;
     }
-
-    ul {
-      list-style: none;
+    section {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 5% 60px;
     }
 
-    /* Utility classes for general animations, transitions, etc. */
-    .fade-in {
-      opacity: 0;
-      transition: opacity 0.8s ease;
-    }
-    .fade-in.show {
-      opacity: 1;
-    }
-
-    /***********************************************************************
-    ***********************************************************************
-    ** NAVIGATION BAR
-    ***********************************************************************
-    ***********************************************************************/
+    /* Navigation Bar */
     nav {
       position: fixed;
+      top: 0;
       width: 100%;
-      background-color: #fff;
+      background: #fff;
       padding: 1rem 2rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 999;
     }
-
     nav .logo {
-      font-weight: 600;
       font-size: 1.25rem;
+      font-weight: 600;
       letter-spacing: 1px;
     }
-
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.5rem;
     }
-
+    nav ul li {
+      position: relative;
+    }
     nav ul li a {
       font-weight: 400;
-      transition: color 0.3s ease;
       padding-bottom: 6px;
       position: relative;
     }
-
-    /* Active nav item highlight (bottom border) */
+    /* Active Nav Link Underline */
     nav ul li a.active::after,
     nav ul li a:hover::after {
       content: "";
       position: absolute;
       left: 0;
       bottom: 0;
-      height: 2px;
       width: 100%;
+      height: 2px;
       background-color: #007acc;
     }
 
-    nav ul li a:hover {
-      color: #007acc;
-    }
-
-    /***********************************************************************
-    ***********************************************************************
-    ** SECTIONS & CONTAINERS
-    ***********************************************************************
-    ***********************************************************************/
-    section {
-      width: 100%;
-      padding: 80px 5% 60px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /***********************************************************************
-    ** PARALLAX HERO SECTION
-    ***********************************************************************/
+    /* Hero Section */
     #hero {
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      /* Align text to start or center as needed */
       align-items: flex-start;
       height: 100vh;
       min-height: 600px;
       color: #111;
-      padding-top: 120px; /* Extra top padding to offset nav */
-
-      /* Parallax background using background-attachment: fixed */
-      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
-            url('https://via.placeholder.com/1920x1080/eeeeee/cccccc?text=Hero+Background+Image') no-repeat center center;
-
+      padding-top: 120px; /* offset for nav */
+      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+        url('https://via.placeholder.com/1920x1080/eeeeee/cccccc?text=Hero+Background+Image') 
+        no-repeat center center;
       background-size: cover;
       background-attachment: fixed;
     }
-
     #hero .hero-content {
-      /* Remove or comment out the lines below to prevent conflicting fade from leaving it at opacity 0
-         opacity: 0;
-         transform: translateY(20px);
-         animation: fadeUp 1s forwards 0.5s ease-out;
-      */
-      /* Instead, just let GSAP or AOS do the fade/slide. */
+      max-width: 600px;
     }
-
-    /* You can leave the @keyframes if you like, or remove them. They're harmless if unused. */
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     #hero h1 {
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 1rem;
     }
-
     #hero h2 {
       font-size: 1.5rem;
-      margin-bottom: 2rem;
       font-weight: 300;
-    }
-
-    #hero p {
-      max-width: 600px;
-      line-height: 1.4;
       margin-bottom: 1.5rem;
     }
-
+    #hero p {
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
     #hero .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
+      border-radius: 4px;
       background-color: #007acc;
       color: #fff;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
       font-weight: 600;
+      transition: background-color 0.3s ease;
     }
-
     #hero .btn:hover {
       background-color: #005f99;
     }
 
-    /***********************************************************************
-    ** GENERAL SECTION TITLES
-    ***********************************************************************/
+    /* Section Title */
     .section-title {
-      margin-bottom: 2rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 600;
       font-size: 1.2rem;
       text-align: center;
+      margin-bottom: 2rem;
       position: relative;
     }
-
     .section-title::after {
-      content: '';
+      content: "";
       display: block;
       width: 60px;
       height: 3px;
@@ -248,172 +164,120 @@
       margin: 0.5rem auto 0;
     }
 
-    /***********************************************************************
-    ** ABOUT SECTION
-    ***********************************************************************/
+    /* About */
     #about p {
       max-width: 800px;
       margin: 1rem auto;
-      line-height: 1.7;
       text-align: justify;
+      line-height: 1.7;
     }
 
-    /***********************************************************************
-    ** EDUCATION SECTION
-    ***********************************************************************/
-    #education {
-      position: relative;
-    }
-
-    /* Two-Column Layout */
+    /* Education: 2-column grid */
     .two-column {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
       margin-top: 2rem;
     }
-
     .edu-item {
-      background-color: #fff;
-      padding: 1rem 1.5rem;
-      margin-bottom: 1.5rem;
+      background: #fff;
       border-radius: 5px;
+      padding: 1.5rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
-
     .edu-item h3 {
       font-size: 1.1rem;
-      margin-bottom: 0.3rem;
       font-weight: 600;
+      margin-bottom: 0.3rem;
     }
-
     .edu-item h4 {
       color: #007acc;
       margin-bottom: 0.5rem;
       font-weight: 500;
     }
 
-    /***********************************************************************
-    ** EXPERIENCE SECTION
-    ***********************************************************************/
-    #experience {
-      position: relative;
-    }
-
+    /* Experience */
     .experience-item {
-      background-color: #fff;
-      padding: 1rem 1.5rem;
-      margin-bottom: 1.5rem;
+      background: #fff;
       border-radius: 5px;
+      padding: 1.5rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      margin-bottom: 1.5rem;
     }
-
     .experience-item h3 {
       font-size: 1.1rem;
-      margin-bottom: 0.3rem;
       font-weight: 600;
+      margin-bottom: 0.3rem;
     }
-
     .experience-item h4 {
       color: #007acc;
       margin-bottom: 0.5rem;
       font-weight: 500;
     }
-
     .experience-item ul {
-      list-style-type: disc;
+      list-style: disc;
       margin-left: 1.5rem;
-      margin-top: 0.5rem;
       line-height: 1.6;
+      margin-top: 0.5rem;
     }
 
-    /***********************************************************************
-    ** PROJECTS SECTION
-    ***********************************************************************/
-    #projects {
-      position: relative;
-    }
-
+    /* Projects */
     .project-item {
-      background-color: #fff;
-      padding: 1rem 1.5rem;
-      margin-bottom: 1.5rem;
+      background: #fff;
       border-radius: 5px;
+      padding: 1.5rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
+    .project-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
     .project-item h3 {
       font-size: 1.1rem;
-      margin-bottom: 0.3rem;
       font-weight: 600;
+      margin-bottom: 0.3rem;
     }
-
     .project-item h4 {
       color: #007acc;
       margin-bottom: 0.5rem;
       font-weight: 500;
     }
-
-    /* Hover effect for project links or items */
-    .project-item:hover {
-      transform: translateY(-3px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Embedded Video Container */
     .video-container {
-      margin: 1.5rem 0;
       position: relative;
-      overflow: hidden;
       width: 100%;
-      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      padding-top: 56.25%; /* aspect ratio 16:9 */
+      margin-top: 1rem;
     }
-
     .video-container iframe {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       border: 0;
     }
 
-    /***********************************************************************
-    ** AWARDS SECTION
-    ***********************************************************************/
-    #awards {
-      position: relative;
-    }
-
+    /* Awards */
     .award-item {
-      background-color: #fff;
-      padding: 1rem 1.5rem;
-      margin-bottom: 1.5rem;
+      background: #fff;
       border-radius: 5px;
+      padding: 1.5rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      margin-bottom: 1.5rem;
     }
-
     .award-item h3 {
       font-size: 1.1rem;
-      margin-bottom: 0.3rem;
       font-weight: 600;
+      margin-bottom: 0.3rem;
     }
-
     .award-item ul {
-      list-style-type: disc;
+      list-style: disc;
       margin-left: 1.5rem;
-      margin-top: 0.5rem;
       line-height: 1.6;
+      margin-top: 0.5rem;
     }
 
-    /***********************************************************************
-    ** SKILLS SECTION
-    ***********************************************************************/
-    #skills {
-      position: relative;
-    }
-
+    /* Skills */
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
@@ -421,7 +285,6 @@
       justify-content: center;
       margin-top: 2rem;
     }
-
     .skill-badge {
       background-color: #007acc;
       color: #fff;
@@ -431,114 +294,78 @@
       font-weight: 300;
       transition: transform 0.3s ease;
     }
-
     .skill-badge:hover {
       transform: scale(1.05);
     }
 
-    /***********************************************************************
-    ** CONTACT SECTION
-    ***********************************************************************/
-    #contact {
-      position: relative;
-    }
-
+    /* Contact */
     #contact .contact-info {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
       margin-bottom: 1.5rem;
     }
-
     #contact .contact-info p {
       font-weight: 400;
     }
-
-    /* Contact Form */
     form {
       max-width: 600px;
       margin: 0 auto;
     }
-
     form label {
-      display:block; 
+      display: block;
       margin-bottom: 0.25rem;
       font-weight: 600;
     }
-
     form input, form textarea {
-      width: 100%; 
+      width: 100%;
       padding: 0.5rem;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-
     form button[type="submit"] {
-      background-color: #007acc; 
-      color: #fff; 
-      border: none; 
-      padding: 0.75rem 1.5rem; 
-      border-radius: 4px; 
+      background-color: #007acc;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
       cursor: pointer;
       font-weight: 600;
       margin-top: 0.5rem;
     }
-
     form button[type="submit"]:hover {
       background-color: #005f99;
     }
 
-    /***********************************************************************
-    ** FOOTER
-    ***********************************************************************/
+    /* Footer */
     footer {
-      text-align: center;
       background: #007acc;
       color: #fff;
+      text-align: center;
       padding: 1rem 0;
     }
-
     footer p {
       margin: 0;
       font-size: 0.85rem;
     }
 
-    /***********************************************************************
-    ** MEDIA QUERIES
-    ***********************************************************************/
+    /* Responsive */
     @media (max-width: 768px) {
       #hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
       #hero h2 {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
       }
       .two-column {
         grid-template-columns: 1fr;
       }
     }
-
-    /***********************************************************************
-    ***********************************************************************
-    ** MASSIVE COMMENTED SECTION FOR EXTRA DETAIL & LINE COUNT
-    ** All code below is functional or repeated for demonstration
-    ** to fulfill the 3000-line requirement...
-    ***********************************************************************
-    ***********************************************************************/
-
-    /* 
-      Large repeated CSS blocks to inflate line count...
-      (unchanged from your original; omitted here for brevity)
-    */
   </style>
 </head>
 <body>
 
-  <!-- 
-    *********************************************************************
-    * NAVIGATION BAR
-    *********************************************************************
-  -->
+  <!-- NAVBAR -->
   <nav>
     <div class="logo">AIDAN HALL</div>
     <ul>
@@ -553,51 +380,37 @@
     </ul>
   </nav>
 
-  <!-- 
-    *********************************************************************
-    * HERO SECTION
-    * Parallax background with fade-up content
-    *********************************************************************
-  -->
+  <!-- HERO SECTION -->
   <section id="hero">
     <div class="hero-content">
       <h1>Aidan Hall</h1>
-      <h2>Computer Science & Mathematics Double Major at Duke University</h2>
+      <h2>Computer Science & Mathematics at Duke University</h2>
       <p>
-        Second-year student in Durham, NC with a passion for applying 
+        I'm a second-year student in Durham, NC, passionate about applying 
         mathematical and technological solutions to real-world problems.
-        Experienced in a broad range of topics, from game design to AI research.
       </p>
       <a class="btn" href="#about">Learn More</a>
     </div>
   </section>
 
-  <!-- 
-    *********************************************************************
-    * ABOUT SECTION
-    *********************************************************************
-  -->
+  <!-- ABOUT -->
   <section id="about" data-aos="fade-up">
     <div class="section-title">About Me</div>
     <p>
-      I’m a second-year computer science and mathematics double major at Duke University, 
+      I’m a second-year computer science and mathematics double major at Duke, 
       driven by a fascination with how mathematics can power modern software systems. 
       I love diving into everything from AI research and software development 
-      to game design and community fundraising projects. 
+      to game design and community fundraising projects.
     </p>
     <p>
       Outside the classroom, I’ve led math team competitions, directed multiple successful 
-      game fundraisers, and specialized in building advanced tools such as a 
-      7-card Poker Hand Evaluation Calculator. My goal is always to explore the edge where 
+      game fundraisers, and specialized in building advanced tools, such as 
+      a 7-card Poker Hand Evaluation Calculator. My goal is to explore the edge where 
       creative problem-solving meets cutting-edge technology.
     </p>
   </section>
 
-  <!-- 
-    *********************************************************************
-    * EDUCATION SECTION
-    *********************************************************************
-  -->
+  <!-- EDUCATION -->
   <section id="education" data-aos="fade-up">
     <div class="section-title">Education</div>
     <div class="two-column">
@@ -610,7 +423,6 @@
           Data Structures & Algorithms
         </p>
       </div>
-
       <div class="edu-item">
         <h3>YORK COMMUNITY HIGH SCHOOL</h3>
         <h4>Aug 2019 – May 2023 | GPA: 4.93 | SAT: 1560</h4>
@@ -622,113 +434,87 @@
     </div>
   </section>
 
-  <!-- 
-    *********************************************************************
-    * EXPERIENCE SECTION
-    *********************************************************************
-  -->
+  <!-- EXPERIENCE -->
   <section id="experience" data-aos="fade-up">
-    <div class="section-title">Job Experience</div>
-
+    <div class="section-title">Experience</div>
     <div class="experience-item">
       <h3>AI Developer</h3>
-      <h4>DataAnnotation (October 2024 – Present)</h4>
+      <h4>DataAnnotation (Oct 2024 – Present)</h4>
       <ul>
         <li>Analyzing AI thinking patterns and algorithms for self-designed prompts.</li>
-        <li>Identifying discrepancies in analysis and researching possible causes of errors.</li>
-        <li>Contributed to Zebra AI on math and coding-related projects.</li>
-        <li>Promoted to higher-intensity projects assigned to a selective group of candidates.</li>
+        <li>Researching root causes of analysis discrepancies.</li>
+        <li>Contributed to math/coding-related AI projects for Zebra AI.</li>
+        <li>Promoted to high-intensity projects assigned to a selective group.</li>
       </ul>
     </div>
-
     <div class="experience-item">
       <h3>Instructor</h3>
       <h4>Mathnasium (July 2022 – July 2023)</h4>
       <ul>
-        <li>Taught various elementary to early high school students math topics such as algebra, geometry, and calculus.</li>
-        <li>Led group sessions of up to four students, providing individual assistance and feedback.</li>
+        <li>Taught elementary to high school students various math topics.</li>
+        <li>Led group sessions up to four students, providing individual assistance.</li>
       </ul>
     </div>
-
     <div class="experience-item">
       <h3>Lead Software / Game Engineer</h3>
       <h4>Bryan Middle Treasure Hunt (Jan 2021 – May 2022)</h4>
       <ul>
-        <li>Raised over $20,000 for a middle school by directing content creation and implementing two annual online game fundraisers.</li>
-        <li>Developed front-end features for the program’s website, providing a streamlined user experience.</li>
-        <li>Collaborated with team members to troubleshoot and resolve various technology challenges.</li>
+        <li>Raised over $20,000 via two annual online game fundraisers.</li>
+        <li>Developed front-end features and streamlined user experiences.</li>
+        <li>Collaborated on tech solutions with team members.</li>
       </ul>
     </div>
-
     <div class="experience-item">
       <h3>Leader / Event Host</h3>
-      <h4>Visitation Catholic Game Fundraiser (Dec 2020 – Apr 2021)</h4>
+      <h4>Visitation Catholic Fundraiser (Dec 2020 – Apr 2021)</h4>
       <ul>
-        <li>Organized and created an original fundraiser raising 1,000 dollars for Visitation Catholic School through two online Rocket League Esports tournaments.</li>
-        <li>Led coordination in all aspects of both events and spent over 50 hours planning for each one.</li>
-        <li>Created a series of heavily detailed and well-edited videos pitching my plan to VCS.</li>
+        <li>Created an original fundraiser raising $1,000 for a local school.</li>
+        <li>Hosted two online Rocket League Esports tournaments.</li>
+        <li>Developed detailed video proposals for the event’s success.</li>
       </ul>
     </div>
   </section>
 
-  <!-- 
-    *********************************************************************
-    * PROJECTS SECTION
-    *********************************************************************
-  -->
+  <!-- PROJECTS -->
   <section id="projects" data-aos="fade-up">
     <div class="section-title">Projects</div>
-
-    <!-- Project 1: Form-Filling AI Agent -->
     <div class="project-item" data-aos="zoom-in">
       <h3>Form-Filling AI Agent</h3>
       <h4>(December 2024 – Present)</h4>
       <p>
-        Created a Python-based AI agent to automate form completion using human-like behavior 
-        and intelligent responses generated by Hugging Face's GPT-Neo. Designed for tasks 
-        requiring advanced automation and thoughtful AI input, it leverages Selenium for browser 
-        interaction and Loguru for robust logging.
+        A Python-based AI agent to automate form completion via human-like behavior 
+        and GPT-Neo responses, using Selenium for browser tasks and Loguru for logs.
       </p>
       <p>
         <a href="https://github.com/DukeAidanHall/Form-Filling-Automation-Agent" target="_blank" style="color: #007acc; text-decoration: underline;">
-          View GitHub Repository
+          View on GitHub
         </a>
       </p>
     </div>
-
-    <!-- Project 2: C(n,k)ombiEval7 -->
     <div class="project-item" data-aos="zoom-in">
       <h3>C(n,k)ombiEval7</h3>
       <h4>(May 2024 – Present)</h4>
       <p>
-        Developed a 7-card Poker Hand Evaluation Calculator app in Flutter (Dart).  
-        Uses standard methods to calculate probabilities post-flop, but pre-flop leverages 
-        advanced combinatorics to reduce runtime and memory usage. Avoids large lookup arrays 
-        or brute-force comparisons that many other calculators rely on.
+        A 7-card Poker Hand Evaluation Calculator (Flutter/Dart).  
+        Utilizes advanced combinatorics pre-flop to reduce runtime & memory usage 
+        beyond brute-force or large lookup arrays.
       </p>
       <p>
         <a href="https://github.com/DukeAidanHall/C-n-k-ombiEval7" target="_blank" style="color: #007acc; text-decoration: underline;">
-          View GitHub Repository
+          View on GitHub
         </a>
       </p>
     </div>
-
-    <!-- Project 3: Game Design & Development -->
     <div class="project-item" data-aos="zoom-in">
       <h3>Game Design & Development</h3>
       <p>
-        Collaborated on multiple game projects and participated in 
-        Duke’s Game Design Focus Program, creating interactive 
-        experiences that raised funds and entertained audiences.  
+        Collaborated on multiple game projects during Duke’s Game Design Focus Program, 
+        building interactive experiences that raised funds and entertained audiences.
       </p>
     </div>
-
-    <!-- Featured Video -->
     <div class="project-item" data-aos="zoom-in">
       <h3>Featured Video: 30-Second Game Design Overview</h3>
-      <p>
-        If you’d like, watch this quick 30-second video to get an overview of my experience as a game designer.
-      </p>
+      <p>Watch a quick overview of my experience as a game designer:</p>
       <div class="video-container">
         <iframe 
           src="https://www.wevideo.com/view/3656738608" 
@@ -739,19 +525,15 @@
     </div>
   </section>
 
-  <!-- 
-    *********************************************************************
-    * AWARDS SECTION
-    *********************************************************************
-  -->
+  <!-- AWARDS -->
   <section id="awards" data-aos="fade-up">
     <div class="section-title">Awards</div>
     <div class="award-item">
       <h3>Math Team Honors</h3>
       <ul>
         <li>2-Time ICTM Regionals Individual Champion</li>
-        <li>3-Time ICTM State Top 10 Scorer (Oral Competition / Calculator Team)</li>
-        <li>Former IML and ICTM Perfect Scorer</li>
+        <li>3-Time ICTM State Top 10 Scorer (Oral/Calculator)</li>
+        <li>Former IML & ICTM Perfect Scorer</li>
         <li>Deli Metz - Thomas Nelson Outstanding Math Award</li>
         <li>WSML Math Leadership Award</li>
       </ul>
@@ -759,40 +541,32 @@
     <div class="award-item">
       <h3>Scholarship Recognitions</h3>
       <ul>
-        <li>Taco Bell Live Más Scholarship (2-Time Recipient)</li>
-        <li>Morehead-Cain Scholarship Semifinalist (UNC Full Ride Award)</li>
+        <li>Taco Bell Live Más Scholarship (2x Recipient)</li>
+        <li>Morehead-Cain Scholarship Semifinalist (UNC)</li>
         <li>Hometown Pride Scholarship Finalist</li>
       </ul>
     </div>
   </section>
 
-  <!-- 
-    *********************************************************************
-    * SKILLS SECTION
-    *********************************************************************
-  -->
+  <!-- SKILLS -->
   <section id="skills" data-aos="fade-up">
     <div class="section-title">Technical Skills</div>
     <div class="skills-grid">
       <div class="skill-badge">Java</div>
       <div class="skill-badge">C</div>
       <div class="skill-badge">Python</div>
-      <div class="skill-badge">Unreal Engine 4</div>
+      <div class="skill-badge">Unreal Engine</div>
       <div class="skill-badge">Flutter (Dart)</div>
       <div class="skill-badge">Excel</div>
       <div class="skill-badge">GameMaker</div>
       <div class="skill-badge">WeVideo</div>
       <div class="skill-badge">MIPS Assembly</div>
       <div class="skill-badge">Logisim</div>
-      <div class="skill-badge">GitHub</div>
+      <div class="skill-badge">Git/GitHub</div>
     </div>
   </section>
 
-  <!-- 
-    *********************************************************************
-    * CONTACT SECTION
-    *********************************************************************
-  -->
+  <!-- CONTACT -->
   <section id="contact" data-aos="fade-up">
     <div class="section-title">Contact</div>
     <div class="contact-info">
@@ -800,142 +574,74 @@
       <p><strong>Email:</strong> <a href="mailto:studentaidanhall@gmail.com">studentaidanhall@gmail.com</a></p>
       <p><strong>Location:</strong> Elmhurst, IL 60126</p>
     </div>
-    <!-- Optional: A simple contact form (non-functional, but can be enabled via backend) -->
     <form>
       <div style="margin-bottom: 1rem;">
         <label for="name">Name</label>
-        <input 
-          type="text" 
-          id="name" 
-          name="name"
-        />
+        <input type="text" id="name" name="name">
       </div>
       <div style="margin-bottom: 1rem;">
         <label for="email">Email</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email"
-        />
+        <input type="email" id="email" name="email">
       </div>
       <div style="margin-bottom: 1rem;">
         <label for="message">Message</label>
-        <textarea 
-          id="message" 
-          name="message" 
-          rows="5"
-        ></textarea>
+        <textarea id="message" name="message" rows="5"></textarea>
       </div>
-      <button 
-        type="submit"
-      >
-        Send
-      </button>
+      <button type="submit">Send</button>
     </form>
   </section>
 
-  <!-- 
-    *********************************************************************
-    * FOOTER
-    *********************************************************************
-  -->
+  <!-- FOOTER -->
   <footer>
     <p>&copy; <span id="year"></span> Aidan Hall. All Rights Reserved.</p>
   </footer>
 
-  <!-- 
-    *********************************************************************
-    * SCRIPTS
-    *********************************************************************
-  -->
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
   <script>
-    /***********************************************************************
-    ** ON-LOAD INITIALIZATIONS
-    ***********************************************************************/
-    document.addEventListener('DOMContentLoaded', function() {
-      // AOS Initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize AOS
       AOS.init({
-        duration: 1000, // Duration of animation
-        once: true,      // Whether animation should happen only once
+        duration: 800,  // animation duration
+        once: true      // whether animation should happen only once
       });
 
-      // GSAP & ScrollTrigger initialization
-      gsap.registerPlugin(ScrollTrigger);
+      // Update Footer Year
+      document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Example: Animate sections on scroll with GSAP
-      gsap.utils.toArray("section").forEach((section) => {
-        gsap.from(section, {
-          y: 50,
-          opacity: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          }
-        });
-      });
-
-      // Intersection Observer for nav highlight
+      // Intersection Observer for active nav link
       const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll("nav ul li a.nav-link");
 
       const options = {
         root: null,
-        rootMargin: "0px",
         threshold: 0.5
       };
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Remove active class from all nav links
-            navLinks.forEach(link => {
-              link.classList.remove("active");
-            });
-            // Add active class to the intersecting section's nav link
-            const id = entry.target.getAttribute("id");
-            const activeLink = document.querySelector(`nav ul li a[href="#${id}"]`);
-            if (activeLink) {
-              activeLink.classList.add("active");
-            }
+            navLinks.forEach(link => link.classList.remove("active"));
+            const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add("active");
           }
         });
       }, options);
 
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-    });
+      sections.forEach(section => observer.observe(section));
 
-    /***********************************************************************
-    ** SMOOTH SCROLLING FOR INTERNAL LINKS (REDUNDANT WITH CSS, BUT HELPFUL)
-    ***********************************************************************/
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute("href");
-        document.querySelector(targetId).scrollIntoView({
-          behavior: "smooth"
+      // Smooth scroll for nav links
+      document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          document.querySelector(targetId).scrollIntoView({
+            behavior: "smooth"
+          });
         });
       });
     });
-
-    /***********************************************************************
-    ** UPDATE FOOTER YEAR
-    ***********************************************************************/
-    const yearSpan = document.getElementById('year');
-    yearSpan.textContent = new Date().getFullYear();
-
-    /***********************************************************************
-    ***********************************************************************
-    ** MASSIVE REPEATED JS BLOCK FOR LINE COUNT & ADVANCED USAGE EXAMPLES
-    ** (unchanged from your original; omitted for brevity)
-    ***********************************************************************
-    ***********************************************************************/
-
-    // End of large repeated code...
   </script>
-
 </body>
 </html>
