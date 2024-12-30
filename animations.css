@@ -25,7 +25,7 @@
 /* Typing animation for hero text */
 @keyframes typing {
   from { width: 0 }
-  to { width: 10% }
+  to { width: 50% }
 }
 
 /* Gradient animation for section titles */
