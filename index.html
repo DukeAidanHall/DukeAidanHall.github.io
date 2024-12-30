@@ -102,17 +102,17 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      /* Align text to start or center as needed */
-      align-items: flex-start;
+      align-items: flex-start; /* or center, if you prefer */
       height: 100vh;
       min-height: 600px;
       color: #111;
       padding-top: 120px; /* offset for nav */
-      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+      /* Simplified background (no 'background-attachment: fixed') to avoid issues */
+      background: 
+        linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
         url('https://via.placeholder.com/1920x1080/eeeeee/cccccc?text=Hero+Background+Image') 
         no-repeat center center;
       background-size: cover;
-      background-attachment: fixed;
     }
     #hero .hero-content {
       max-width: 600px;
@@ -228,6 +228,7 @@
       padding: 1.5rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.08);
       margin-bottom: 1.5rem;
+      /* Removed data-aos from these items to avoid overlapping animations */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .project-item:hover {
@@ -244,18 +245,7 @@
       margin-bottom: 0.5rem;
       font-weight: 500;
     }
-    .video-container {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%; /* aspect ratio 16:9 */
-      margin-top: 1rem;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: 0;
-    }
+
     /* Awards */
     .award-item {
       background: #fff;
@@ -477,7 +467,9 @@
   <!-- PROJECTS -->
   <section id="projects" data-aos="fade-up">
     <div class="section-title">Projects</div>
-    <div class="project-item" data-aos="zoom-in">
+
+    <!-- Project 1 -->
+    <div class="project-item">
       <h3>Form-Filling AI Agent</h3>
       <h4>(December 2024 – Present)</h4>
       <p>
@@ -490,7 +482,9 @@
         </a>
       </p>
     </div>
-    <div class="project-item" data-aos="zoom-in">
+
+    <!-- Project 2 -->
+    <div class="project-item">
       <h3>C(n,k)ombiEval7</h3>
       <h4>(May 2024 – Present)</h4>
       <p>
@@ -504,22 +498,29 @@
         </a>
       </p>
     </div>
-    <div class="project-item" data-aos="zoom-in">
+
+    <!-- Project 3 -->
+    <div class="project-item">
       <h3>Game Design & Development</h3>
       <p>
         Collaborated on multiple game projects during Duke’s Game Design Focus Program, 
         building interactive experiences that raised funds and entertained audiences.
       </p>
     </div>
-    <div class="project-item" data-aos="zoom-in">
+
+    <!-- Featured Video: Replaced the iframe with a static thumbnail link -->
+    <div class="project-item">
       <h3>Featured Video: 30-Second Game Design Overview</h3>
-      <p>Watch a quick overview of my experience as a game designer:</p>
-      <div class="video-container">
-        <iframe 
-          src="https://www.wevideo.com/view/3656738608" 
-          frameborder="0" 
-          allowfullscreen>
-        </iframe>
+      <p>Click the thumbnail below to watch an overview of my game design experience:</p>
+      <div style="margin-top: 1rem; text-align: center;">
+        <!-- Replace via.placeholder.com with a real thumbnail image if desired -->
+        <a href="https://www.wevideo.com/view/3656738608" target="_blank">
+          <img 
+            src="https://via.placeholder.com/600x338/cccccc/333333?text=Click+to+Watch+Video" 
+            alt="Game Design Video Thumbnail" 
+            style="max-width: 100%; border-radius: 5px;"
+          >
+        </a>
       </div>
     </div>
   </section>
@@ -597,10 +598,9 @@
 
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Initialize AOS
+      // Initialize AOS with minimal overlapping
       AOS.init({
         duration: 800,  // animation duration
         once: true      // whether animation should happen only once
