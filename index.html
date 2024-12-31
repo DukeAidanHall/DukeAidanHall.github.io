@@ -12,6 +12,12 @@
     rel="stylesheet"
   />
 
+  <!-- Font Awesome for Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+
   <style>
     /* Reset & Global */
     * {
@@ -91,6 +97,20 @@
       width: 100%;
       height: 2px;
       background-color: #007acc;
+    }
+
+    /* Social Icons */
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+    .social-icons a {
+      font-size: 1.5rem;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #007acc;
     }
 
     /* Hero Section */
@@ -366,6 +386,11 @@
       <li><a href="#skills" class="nav-link">Skills</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/aidan-hall-30255025a" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/DukeAidanHall" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://leetcode.com/u/AidanHall/" target="_blank"><i class="fab fa-leetcode"></i></a>
+    </div>
   </nav>
 
   <!-- HERO SECTION -->
