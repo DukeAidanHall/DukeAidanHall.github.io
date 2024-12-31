@@ -186,6 +186,28 @@
       margin: 1rem auto;
       text-align: justify;
       line-height: 1.7;
+      opacity: 0; /* Initially hidden */
+    }
+
+    /* Typing Animation */
+    .typing {
+      display: inline-block;
+      overflow: hidden;
+      border-right: 2px solid #333; /* Cursor effect */
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 0.15em;
+      animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #333; }
     }
 
     /* Education: 2-column grid */
@@ -409,12 +431,12 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="section-title">About Me</div>
-    <p>
+    <p id="about-text-1" class="typing-target">
       I'm driven by a fascination with how mathematics can power modern software systems. 
       I love diving into everything from AI agent automation and software development 
       to game design and community fundraising projects.
     </p>
-    <p>
+    <p id="about-text-2" class="typing-target">
       Outside the classroom, I've led math team competitions, directed multiple successful 
       game fundraisers, and specialized in building advanced tools, such as 
       a 7-card Poker Hand Evaluation Calculator. My goal is to explore the edge where 
@@ -634,6 +656,17 @@
             navLinks.forEach(link => link.classList.remove("active"));
             const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
             if (activeLink) activeLink.classList.add("active");
+
+            // Trigger typing animation for the About section
+            if (entry.target.id === "about") {
+              const aboutTexts = document.querySelectorAll("#about .typing-target");
+              aboutTexts.forEach((text, index) => {
+                setTimeout(() => {
+                  text.style.opacity = 1;
+                  text.classList.add("typing");
+                }, index * 3000); // Delay each paragraph by 3 seconds
+              });
+            }
           }
         });
       }, options);
