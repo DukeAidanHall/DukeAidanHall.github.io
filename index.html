@@ -11,13 +11,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
   <style>
-    /* Debugging Styles */
-  * {
-    outline: 1px solid red !important; /* Highlight all elements */
-  }
-  body {
-    background: yellow !important; /* Change background to highlight visibility */
-  }
     /* Global Resets & Basic Styles */
     * {
       margin: 0;
@@ -118,24 +111,24 @@
       font-weight: 700;
       margin-bottom: 1rem;
       font-family: 'Space Mono', monospace;
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 1; /* Force visibility */
+      transform: none; /* Remove transformations */
     }
 
     #hero h2 {
       font-size: 1.75rem;
       margin-bottom: 2rem;
       font-weight: 400;
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 1; /* Force visibility */
+      transform: none; /* Remove transformations */
     }
 
     #hero p {
       max-width: 600px;
       line-height: 1.4;
       margin-bottom: 1.5rem;
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 1; /* Force visibility */
+      transform: none; /* Remove transformations */
     }
 
     #hero .btn {
@@ -146,8 +139,8 @@
       border-radius: 4px;
       transition: background-color 0.3s ease, color 0.3s ease;
       font-weight: 600;
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 1; /* Force visibility */
+      transform: none; /* Remove transformations */
     }
 
     #hero .btn:hover {
@@ -168,24 +161,17 @@
       font-weight: 700;
       margin-bottom: 2rem;
       color: #007acc;
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 1; /* Force visibility */
+      transform: none; /* Remove transformations */
     }
 
     /* About Section */
-    #about {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
     #about p {
       max-width: 800px;
       margin-bottom: 1rem;
       line-height: 1.5;
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 1; /* Force visibility */
+      transform: none; /* Remove transformations */
     }
 
     /* Experience Section */
@@ -201,8 +187,8 @@
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 1; /* Force visibility */
+      transform: none; /* Remove transformations */
     }
 
     #experience .experience-item:hover {
@@ -244,8 +230,8 @@
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 1; /* Force visibility */
+      transform: none; /* Remove transformations */
     }
 
     #projects .project-item:hover {
@@ -292,8 +278,8 @@
       font-size: 0.9rem;
       font-weight: 300;
       transition: background-color 0.3s ease;
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 1; /* Force visibility */
+      transform: none; /* Remove transformations */
     }
 
     #skills .skill-badge:hover {
@@ -327,7 +313,6 @@
     }
   </style>
 </head>
-
 <body>
   <!-- Navigation Bar -->
   <nav>
