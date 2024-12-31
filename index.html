@@ -502,7 +502,7 @@
     // GSAP Animations
     gsap.registerPlugin(ScrollTrigger);
 
-    // Typewriter Effect
+    // Typewriter Effect for Hero Section
     function typewriterEffect(element) {
       const text = element.textContent;
       element.textContent = ''; // Clear the text
@@ -520,14 +520,10 @@
       type();
     }
 
-    // Apply typewriter effect to all text elements
-    gsap.utils.toArray("h1, h2, h3, p, li, .btn").forEach(element => {
-      ScrollTrigger.create({
-        trigger: element,
-        start: "top 80%",
-        onEnter: () => typewriterEffect(element),
-        once: true, // Only run once
-      });
+    // Apply typewriter effect to hero section text
+    const heroTextElements = document.querySelectorAll("#hero h1, #hero h2, #hero p, #hero .btn");
+    heroTextElements.forEach(element => {
+      typewriterEffect(element);
     });
   </script>
 </body>
