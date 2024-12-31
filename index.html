@@ -35,6 +35,13 @@
       margin-bottom: 0.5rem;
     }
 
+    /* Gradient Background Animation */
+    @keyframes gradientBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     /* Navbar Styles */
     nav {
       position: fixed;
@@ -90,7 +97,9 @@
       align-items: flex-start;
       height: 100vh;
       min-height: 600px;
-      background: linear-gradient(135deg, #007acc, #005f99);
+      background: linear-gradient(135deg, #007acc, #005f99, #003366);
+      background-size: 200% 200%;
+      animation: gradientBackground 10s ease infinite;
       color: #fff;
       padding: 0 5%;
       position: relative;
@@ -157,6 +166,13 @@
     }
 
     /* About Section */
+    #about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
     #about p {
       max-width: 800px;
       margin-bottom: 1rem;
@@ -166,6 +182,12 @@
     }
 
     /* Experience Section */
+    #experience .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
     #experience .experience-item {
       background-color: #fff;
       padding: 1.5rem;
@@ -174,7 +196,6 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       opacity: 0;
       transform: translateY(50px);
-      margin-bottom: 1.5rem;
     }
 
     #experience .experience-item:hover {
@@ -346,41 +367,43 @@
   <!-- Experience Section -->
   <section id="experience">
     <div class="section-title">Experience</div>
-    <div class="experience-item">
-      <h3>AI Developer</h3>
-      <h4>DataAnnotation (October 2024 – Present)</h4>
-      <ul>
-        <li>Analyzing AI thinking patterns and algorithms for self-designed prompts.</li>
-        <li>Identifying discrepancies in analysis and researching possible causes of errors.</li>
-        <li>Contributed to Zebra AI on math and coding-related projects.</li>
-        <li>Promoted to higher-intensity projects assigned to a selective group of candidates.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>Instructor</h3>
-      <h4>Mathnasium (July 2022 – July 2023)</h4>
-      <ul>
-        <li>Taught various elementary to early high school students math topics such as algebra, geometry, and calculus.</li>
-        <li>Led group sessions of up to four students, providing individual assistance and feedback.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>Lead Software / Game Engineer</h3>
-      <h4>Bryan Middle Treasure Hunt (Jan 2021 – May 2022)</h4>
-      <ul>
-        <li>Raised over $20,000 for a middle school by directing content creation and implementing two annual online game fundraisers.</li>
-        <li>Developed front-end features for the program’s website, providing a streamlined user experience.</li>
-        <li>Collaborated with team members to troubleshoot and resolve various technology challenges.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>Leader / Event Host</h3>
-      <h4>Visitation Catholic Game Fundraiser (Dec 2020 – Apr 2021)</h4>
-      <ul>
-        <li>Organized and created an original fundraiser raising 1,000 dollars for Visitation Catholic School through two online Rocket League Esports tournaments.</li>
-        <li>Led coordination in all aspects of both events and spent over 50 hours planning for each one.</li>
-        <li>Created a series of heavily detailed and well-edited videos pitching my plan to VCS.</li>
-      </ul>
+    <div class="experience-grid">
+      <div class="experience-item">
+        <h3>AI Developer</h3>
+        <h4>DataAnnotation (October 2024 – Present)</h4>
+        <ul>
+          <li>Analyzing AI thinking patterns and algorithms for self-designed prompts.</li>
+          <li>Identifying discrepancies in analysis and researching possible causes of errors.</li>
+          <li>Contributed to Zebra AI on math and coding-related projects.</li>
+          <li>Promoted to higher-intensity projects assigned to a selective group of candidates.</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>Instructor</h3>
+        <h4>Mathnasium (July 2022 – July 2023)</h4>
+        <ul>
+          <li>Taught various elementary to early high school students math topics such as algebra, geometry, and calculus.</li>
+          <li>Led group sessions of up to four students, providing individual assistance and feedback.</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>Lead Software / Game Engineer</h3>
+        <h4>Bryan Middle Treasure Hunt (Jan 2021 – May 2022)</h4>
+        <ul>
+          <li>Raised over $20,000 for a middle school by directing content creation and implementing two annual online game fundraisers.</li>
+          <li>Developed front-end features for the program’s website, providing a streamlined user experience.</li>
+          <li>Collaborated with team members to troubleshoot and resolve various technology challenges.</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>Leader / Event Host</h3>
+        <h4>Visitation Catholic Game Fundraiser (Dec 2020 – Apr 2021)</h4>
+        <ul>
+          <li>Organized and created an original fundraiser raising 1,000 dollars for Visitation Catholic School through two online Rocket League Esports tournaments.</li>
+          <li>Led coordination in all aspects of both events and spent over 50 hours planning for each one.</li>
+          <li>Created a series of heavily detailed and well-edited videos pitching my plan to VCS.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
