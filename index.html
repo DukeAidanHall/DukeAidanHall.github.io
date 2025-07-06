@@ -2,656 +2,948 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Aidan Hall Portfolio - Advanced Design and Interactivity" />
+  <meta name="description" content="Aidan Hall - Computer Science & Mathematics Student at Duke University | AI Developer, Software Engineer, Game Designer" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aidan Hall | Portfolio</title>
+  <title>Aidan Hall | Software Engineer & AI Developer</title>
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Three.js for 3D effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-  <!-- Font Awesome for Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="animations.css" />
 
   <style>
-    /* Reset & Global */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-      scroll-behavior: smooth;
+    /* Additional CSS for enhanced styling */
+    
+    /* Mobile menu styles */
+    .nav-menu.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-top: 1px solid var(--border-color);
     }
-    html, body {
+    
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Enhanced button hover effects */
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
       width: 100%;
       height: 100%;
-      background: #f9f9f9;
-      color: #333;
-      overflow-x: hidden;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
     }
-    body {
-      line-height: 1.6;
+    
+    .btn:hover::before {
+      left: 100%;
     }
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.3s;
-      cursor: pointer;
-    }
-    a:hover {
-      color: #007acc;
-    }
-    h1, h2, h3 {
-      margin-bottom: 0.5rem;
-    }
-    section {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 5% 60px;
-    }
-
-    /* Navigation Bar */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 999;
-    }
-    nav .logo {
-      font-size: 1.25rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li {
-      position: relative;
-    }
-    nav ul li a {
-      font-weight: 400;
-      padding-bottom: 6px;
-      position: relative;
-    }
-    /* Active Nav Link Underline */
-    nav ul li a.active::after,
-    nav ul li a:hover::after {
-      content: "";
+    
+    /* Enhanced card hover effects */
+    .project-card::after {
+      content: '';
       position: absolute;
+      top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .project-card:hover::after {
+      opacity: 1;
+    }
+    
+    /* Skill level visualization */
+    .skill-item {
+      position: relative;
+    }
+    
+    .skill-item::after {
+      content: attr(data-level);
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.8rem;
+      color: var(--accent-primary);
+      font-weight: 600;
+    }
+    
+    /* Enhanced timeline markers */
+    .timeline-marker::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      background: var(--bg-primary);
+      border-radius: 50%;
+    }
+    
+    /* Loading animation */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .terminal-content {
+      animation: pulse 2s infinite;
+    }
+    
+    /* Enhanced section transitions */
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-primary);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-secondary);
+    }
+    
+    /* Enhanced focus states */
+    .form-group input:focus,
+    .form-group textarea:focus {
+      box-shadow: 0 0 0 3px var(--shadow-color), 0 0 20px rgba(0, 212, 255, 0.3);
+    }
+    
+    /* Notification animations */
+    .notification {
+      animation: slideIn 0.3s ease;
+    }
+    
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    /* Enhanced code window */
+    .code-window {
+      position: relative;
+    }
+    
+    .code-window::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.1) 50%, transparent 70%);
+      animation: shimmer 3s infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    /* Enhanced hero section */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(123, 44, 191, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    /* Enhanced navigation */
+    .navbar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.05), transparent);
+      animation: navShimmer 4s infinite;
+    }
+    
+    @keyframes navShimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    /* Enhanced skill categories */
+    .skill-category {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .skill-category::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 2px;
-      background-color: #007acc;
-    }
-
-    /* Social Icons */
-    .social-icons {
-      display: flex;
-      gap: 1rem;
-    }
-    .social-icons a {
-      font-size: 1.5rem;
-      color: #333;
-      transition: color 0.3s ease;
-    }
-    .social-icons a:hover {
-      color: #007acc;
-    }
-
-    /* Hero Section */
-    #hero {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      height: 100vh;
-      min-height: 600px;
-      color: #111;
-      padding-top: 120px;
-      background: 
-        linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
-        url('https://admissionsight.com/wp-content/uploads/2023/09/shutterstock_1475545469.jpg') 
-        no-repeat center center;
-      background-size: cover;
-    }
-    #hero .hero-content {
-      max-width: 600px;
-    }
-    #hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    #hero h2 {
-      font-size: 1.5rem;
-      font-weight: 300;
-      margin-bottom: 1.5rem;
-    }
-    #hero p {
-      line-height: 1.5;
-      margin-bottom: 1.5rem;
-      font-weight: 400;
-    }
-    #hero .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      background-color: #007acc;
-      color: #fff;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-    #hero .btn:hover {
-      background-color: #005f99;
-    }
-
-    /* Section Title */
-    .section-title {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 600;
-      font-size: 1.2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #007acc;
-      margin: 0.5rem auto 0;
-    }
-
-    /* About */
-    #about p {
-      max-width: 800px;
-      margin: 1rem auto;
-      text-align: justify;
-      line-height: 1.7;
-    }
-
-    /* Education: 2-column grid */
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .edu-item {
-      background: #fff;
-      border-radius: 5px;
-      padding: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
-    .edu-item h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-    .edu-item h4 {
-      color: #007acc;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
-    /* Experience */
-    .experience-item {
-      background: #fff;
-      border-radius: 5px;
-      padding: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-      margin-bottom: 1.5rem;
-    }
-    .experience-item h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-    .experience-item h4 {
-      color: #007acc;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-    .experience-item ul {
-      list-style: disc;
-      margin-left: 1.5rem;
-      line-height: 1.6;
-      margin-top: 0.5rem;
-    }
-
-    /* Projects */
-    .project-item {
-      background: #fff;
-      border-radius: 5px;
-      padding: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-      margin-bottom: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .project-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-    .project-item h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-    .project-item h4 {
-      color: #007acc;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
-    /* Awards */
-    .award-item {
-      background: #fff;
-      border-radius: 5px;
-      padding: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-      margin-bottom: 1.5rem;
-    }
-    .award-item h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-    .award-item ul {
-      list-style: disc;
-      margin-left: 1.5rem;
-      line-height: 1.6;
-      margin-top: 0.5rem;
-    }
-
-    /* Skills */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-    .skill-badge {
-      background-color: #007acc;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 300;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
       transition: transform 0.3s ease;
     }
-    .skill-badge:hover {
-      transform: scale(1.05);
+    
+    .skill-category:hover::before {
+      transform: scaleX(1);
     }
-
-    /* Contact */
-    #contact .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
+    
+    /* Enhanced contact form */
+    .contact-form {
+      position: relative;
+      overflow: hidden;
     }
-    #contact .contact-info p {
-      font-weight: 400;
+    
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+      animation: rotate 10s linear infinite;
+      pointer-events: none;
     }
-    form {
-      max-width: 600px;
-      margin: 0 auto;
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
-    form label {
-      display: block;
-      margin-bottom: 0.25rem;
-      font-weight: 600;
+    
+    /* Enhanced footer */
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gradient-primary);
     }
-    form input, form textarea {
+    
+    /* Enhanced social icons */
+    .footer-social a {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer-social a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
       width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      height: 100%;
+      background: var(--gradient-primary);
+      transition: left 0.3s ease;
+      z-index: -1;
     }
-    form button[type="submit"] {
-      background-color: #007acc;
-      color: #fff;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      margin-top: 0.5rem;
+    
+    .footer-social a:hover::before {
+      left: 0;
     }
-    form button[type="submit"]:hover {
-      background-color: #005f99;
-    }
-
-    /* Footer */
-    footer {
-      background: #007acc;
-      color: #fff;
-      text-align: center;
-      padding: 1rem 0;
-    }
-    footer p {
-      margin: 0;
-      font-size: 0.85rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      #hero h1 {
-        font-size: 2.2rem;
-      }
-      #hero h2 {
-        font-size: 1.2rem;
-      }
-      .two-column {
-        grid-template-columns: 1fr;
-      }
-      nav ul {
-        display: none;
-      }
+    
+    .footer-social a:hover {
+      color: var(--bg-primary);
     }
   </style>
-  <link rel="stylesheet" href="animations.css">
 </head>
 <body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+  
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader">
+      <div class="terminal">
+        <div class="terminal-header">
+          <span class="terminal-button"></span>
+          <span class="terminal-button"></span>
+          <span class="terminal-button"></span>
+        </div>
+        <div class="terminal-content">
+          <span class="loading-text">Loading Aidan Hall Portfolio...</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="logo">AIDAN HALL</div>
-    <ul>
-      <li><a href="#hero" class="nav-link">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#education" class="nav-link">Education</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#awards" class="nav-link">Awards</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/aidan-hall-30255025a" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/DukeAidanHall" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://leetcode.com/u/AidanHall/" target="_blank"><i class="fab fa-leetcode"></i></a>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">&lt;AH/&gt;</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#awards" class="nav-link">Awards</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Aidan Hall</h1>
-      <h2>Computer Science & Mathematics at Duke University</h2>
-      <p>
-        I'm a second-year student in Durham, NC, passionate about applying 
-        mathematical and technological solutions to real-world problems.
-      </p>
-      <a class="btn" href="#about">Learn More</a>
-    </div>
-  </section>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="greeting">Hello, I'm</span>
+            <span class="name">Aidan Hall</span>
+          </h1>
+          <h2 class="hero-subtitle">
+            <span class="typing-text">Computer Science & Mathematics Student</span>
+          </h2>
+          <p class="hero-description">
+            Third year Duke student, passionate about developing and utilizing AI agents,
+            software development to solve problems, and mathematical applications.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="code-window">
+            <div class="window-header">
+              <span class="window-button"></span>
+              <span class="window-button"></span>
+              <span class="window-button"></span>
+            </div>
+            <div class="code-content">
+              <pre><code class="language-javascript">
+class AidanHall {
+  constructor() {
+    this.fullName = "John Aidan Hall";
+    this.preferredName = "Aidan";
+    this.education = "Duke University";
+    this.majors = ["Computer Science", "Mathematics"];
+    this.graduationDate = "May 2027";
+  }
+  
+  getValues() {
+    return [
+      "Solve real problems",
+      "Automate intelligently",
+      "Design with precision",
+      "Learn relentlessly"
+    ];
+  }
+  
+  async solveProblem(problem) {
+    return await this.think(problem);
+  }
+}
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-title">About Me</div>
-    <p>
-      I'm driven by a fascination with how mathematics can power modern software systems. 
-      I love diving into everything from AI agent automation and software development 
-      to game design and community fundraising projects.
-    </p>
-    <p>
-      Outside the classroom, I've led math team competitions, directed multiple successful 
-      game fundraisers, and specialized in building advanced tools, such as 
-      a 7-card Poker Hand Evaluation Calculator. My goal is to explore the edge where 
-      creative problem-solving meets cutting-edge technology.
-    </p>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <div class="section-title">Education</div>
-    <div class="two-column">
-      <div class="edu-item">
-        <h3>DUKE UNIVERSITY</h3>
-        <h4>Aug 2023 – Present | GPA: 3.95</h4>
-        <p>
-          Coursework: Mathematical Foundations in CS, Advanced Probability, 
-          Computer Architecture, Discrete Math, Linear Algebra, 
-          Data Structures & Algorithms
-        </p>
+const aidan = new AidanHall();
+aidan.solveProblem("Next Big Challenge");
+              </code></pre>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="edu-item">
-        <h3>YORK COMMUNITY HIGH SCHOOL</h3>
-        <h4>Aug 2019 – May 2023 | GPA: 4.93 | SAT: 1560</h4>
-        <p>
-          Relevant Courses: ACP Calc III, DE 2D Game Design, 
-          AP Calc BC, AP CompSci A / Principles
-        </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I'm passionate about solving complex technical challenges with a strong foundation in 
+            algorithms, automation, and AI. My work centers on designing scalable systems that blend 
+            mathematical precision with modern software practices.
+          </p>
+          <p>
+            Currently working as an IT Development Intern at Dexter Axle Company, I design automated 
+            workflows that reduce processing time by 80% while improving data accuracy. At Teleperson, 
+            I co-lead the development of an AI-powered speaker-matching platform, blending NLP, 
+            automation, and user-centered design to power real-world connections.
+          </p>
+          <p>
+            As a Teaching Assistant for Discrete Math and Advanced Multivariable Calculus, I've guided 
+            150+ students through their coursework. My mathematical foundation enables me to approach 
+            software problems with analytical precision and creative solutions.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number">0%</div>
+            <div class="stat-label">Manual Work Necessary</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">80%</div>
+            <div class="stat-label">Efficiency Gain</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Students Taught</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3.89</div>
+            <div class="stat-label">GPA</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
- <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="section-title">Experience</div>
-    <div class="experience-item">
-      <h3>AI Developer</h3>
-      <h4>DataAnnotation (Oct 2024 – Present)</h4>
-      <ul>
-        <li>Analyzing AI thinking patterns and algorithms for self-designed prompts.</li>
-        <li>Researching root causes of analysis discrepancies.</li>
-        <li>Contributed to math/coding-related AI projects for Zebra AI.</li>
-        <li>Promoted to high-intensity projects assigned to a selective group.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>Instructor</h3>
-      <h4>Mathnasium (July 2022 – July 2023)</h4>
-      <ul>
-        <li>Taught elementary to high school students various math topics.</li>
-        <li>Led group sessions up to four students, providing individual assistance.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>Lead Software / Game Engineer</h3>
-      <h4>Bryan Middle Treasure Hunt (Jan 2021 – May 2022)</h4>
-      <ul>
-        <li>Raised over $20,000 via two annual online game fundraisers.</li>
-        <li>Developed front-end features and streamlined user experiences.</li>
-        <li>Collaborated on tech solutions with team members.</li>
-      </ul>
-    </div>
-    <div class="experience-item">
-      <h3>Leader / Event Host</h3>
-      <h4>Visitation Catholic Fundraiser (Dec 2020 – Apr 2021)</h4>
-      <ul>
-        <li>Created an original fundraiser raising $1,000 for a local school.</li>
-        <li>Hosted two online Rocket League Esports tournaments.</li>
-        <li>Developed detailed video proposals for the event's success.</li>
-      </ul>
+  <!-- Education Section -->
+  <section id="education" class="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Duke University</h3>
+              <span class="company">Durham, NC</span>
+              <span class="duration">Aug 2023 - May 2027</span>
+            </div>
+            <p><strong>Double Major:</strong> B.S. in Computer Science, B.S. in Mathematics, Digital Intelligence Certificate</p>
+            <!--<p><strong>Certificate:</strong> Digital Intelligence</p>-->
+            <p><strong>GPA:</strong> 3.89/4.00 | Dean's List with Distinction</p>
+            <p><strong>Relevant Coursework:</strong> Computer Architecture, Algorithm Design & Analysis, Data Structures & Algorithms, Computer Game Design, Real Analysis, Discrete Math, Advanced Multivariable Calculus, Linear Algebra, Advanced Probability, Mathematical Foundations of CS</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>York Community High School</h3>
+              <span class="company">Elmhurst, IL</span>
+              <span class="duration">Aug 2019 - May 2023</span>
+            </div>
+            <p><strong>GPA:</strong> Weighted: 4.93/4.00 | Unweighted: 4.00/4.00 | AP Scholar with Distinction | PTA Scholar</p>
+            <p><strong>SAT:</strong> 1560/1600</p>
+            <p><strong>Relevant Coursework:</strong> ACP Calculus III, DE 2D Game Design Honors, AP Computer Science, AP Statistics, AP Physics</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-title">Projects</div>
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>IT Development Intern</h3>
+              <span class="company">Dexter Axle Company</span>
+              <span class="duration">May 2025 - Present</span>
+            </div>
+            <ul>
+              <li>Designed automated Azure Logic App workflows reducing processing time by 80%</li>
+              <li>Developed advanced SQL Server views for data aggregation and filtering</li>
+              <li>Automated customer communications and system updates</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>AI Agent Swarm Strategy & Development Intern</h3>
+              <span class="company">Teleperson</span>
+              <span class="duration">Jan 2025 - Present</span>
+            </div>
+            <ul>
+              <li>Leading design for "SpeakEasy" AI-powered conference platform</li>
+              <li>Developed custom AI agents for multi-agent collaboration</li>
+              <li>Co-founded platform with CEO Jesse Hollander</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Teaching Assistant - Computer Science & Mathematics</h3>
+              <span class="company">Duke University</span>
+              <span class="duration">Jan 2025 - Present</span>
+            </div>
+            <ul>
+              <li>Awarded CS Department Outstanding TA Award</li>
+              <li>Teaching Discrete Math and Advanced Multivariable Calculus</li>
+              <li>Responsible for 150+ students across multiple courses</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>AI Trainer & Developer</h3>
+              <span class="company">DataAnnotation</span>
+              <span class="duration">Oct 2024 - May 2025</span>
+            </div>
+            <ul>
+              <li>Engineered evaluation prompts for mathematical reasoning AI models</li>
+              <li>Contributed to 30+ large-scale development efforts including Zebra AI</li>
+              <li>Optimized machine learning pipelines and model performance</li>
+            </ul>
+          </div>
+        </div>
 
-    <div class="project-item">
-      <h3>Form-Filling AI Agent</h3>
-      <h4>(December 2024 – Present)</h4>
-      <p>
-        A Python-based AI agent to automate form completion via human-like behavior 
-        and GPT-Neo responses, using Selenium for browser tasks and Loguru for logs.
-      </p>
-      <p>
-        <a href="https://github.com/DukeAidanHall/Form-Filling-Automation-Agent" target="_blank" style="color: #007acc; text-decoration: underline;">
-          View on GitHub
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Instructor</h3>
+              <span class="company">Mathnasium - The Math Learning Center</span>
+              <span class="duration">Jul 2022 - Jul 2023</span>
+            </div>
+            <ul>
+              <li>Taught algebra, geometry, and calculus to students grades 2-10</li>
+              <li>Led group sessions while giving tailored one-on-one support</li>
+              <li>Built strong foundational skills through interactive problem-solving</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Lead Software & Game Engineer</h3>
+              <span class="company">Elmhurst District 205 Public Schools</span>
+              <span class="duration">Jan 2021 - May 2022</span>
+            </div>
+            <ul>
+              <li>Directed two game-based fundraisers raising over $20,000</li>
+              <li>Built and maintained front-end interface for event website</li>
+              <li>Provided technical support and troubleshooting during live events</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Game Fundraiser Leader & Event Host</h3>
+              <span class="company">Visitation Catholic School</span>
+              <span class="duration">Dec 2020 - Apr 2021</span>
+            </div>
+            <ul>
+              <li>Hosted two Rocket League fundraisers raising $1,000 total</li>
+              <li>Managed logistics and promotion for 50+ event participants</li>
+              <li>Created detailed pitch videos to secure school approval</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <h3>SpeakEasy AI Platform</h3>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <p>Leading the beta launch of SpeakEasy, an AI-powered conference platform co-founded with the CEO of Teleperson. The platform intelligently matches event organizers and speakers using collaborative AI agents, streamlining discovery through advanced search, recommendation systems, and multi-agent decision logic.</p>
+          <div class="project-tech">
+            <span class="tech-tag">AI Agents</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">OpenAI</span>
+          </div>
+        </div>
+
+        <a href="https://github.com/25dlee/BeeWise" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <div class="project-header">
+              <h3>BeeWise</h3>
+              <div class="project-links">
+                <i class="fab fa-github"></i>
+              </div>
+            </div>
+            <p>Gamified news reader that promotes getting information from diverse viewpoints. Built to combat disinformation and echo chambers through AI-driven bias detection and social leaderboard incentives.</p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Goose3</span>
+              <span class="tech-tag">OpenAI Swarm</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">AWS S3</span>
+            </div>
+          </div>
         </a>
-      </p>
-    </div>
-
-    <div class="project-item">
-      <h3>C(n,k)ombiEval7</h3>
-      <h4>(May 2024 – Present)</h4>
-      <p>
-        A 7-card Poker Hand Evaluation Calculator (Flutter/Dart).  
-        Utilizes advanced combinatorics pre-flop to reduce runtime & memory usage 
-        beyond brute-force or large lookup arrays.
-      </p>
-      <p>
-        <a href="https://github.com/DukeAidanHall/C-n-k-ombiEval7" target="_blank" style="color: #007acc; text-decoration: underline;">
-          View on GitHub
-        </a>
-      </p>
-    </div>
-
-    <div class="project-item">
-      <h3>Game Design & Development</h3>
-      <p>
-        Collaborated on multiple game projects during Duke's Game Design Focus Program, 
-        building interactive experiences that raised funds and entertained audiences.
-      </p>
-    </div>
-
-    <div class="project-item">
-      <h3>Featured Video: 30-Second Game Design Overview</h3>
-      <p>Click the thumbnail below to watch an overview of my game design experience:</p>
-      <div style="margin-top: 1rem; text-align: center;">
-        <a href="https://www.wevideo.com/view/3656738608" target="_blank">
-          <img 
-            src="images/IMG_9017.PNG" 
-            alt="Game Design Video" 
-            style="max-width: 100%; border-radius: 5px;"
-          >
-        </a>
+        
+        <a href="https://github.com/DukeAidanHall/cat-mouse-interpreter" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Full-Scale Code Interpreter</h3>
+              <div class="project-links">
+                <i class="fab fa-github"></i>
+              </div>
+            </div>
+            <p>Built from scratch in four stages: lexical token scanning, SLR(1) parsing with DFA stack transitions, recursive abstract syntax tree construction using polymorphic node classes, and graphical execution with built-in runtime error detection. </p>
+            <div class="project-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">SLR(1)</span>
+              <span class="tech-tag">JFLAP</span>
+              <span class="tech-tag">Compiler Design</span>
+              <span class="tech-tag">AST</span>
+            </div>
+          </div>
+        </a>        
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Azure Integration Workflows</h3>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <p>Automated Logic App workflows for data transfer between SQL Server and Dynamics 365, achieving 80% efficiency improvement.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Azure</span>
+            <span class="tech-tag">SQL Server</span>
+            <span class="tech-tag">Dynamics 365</span>
+          </div>
+        </div> 
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3>C(n,k)ombiEval7</h3>
+            <div class="project-links">
+              <a href="https://github.com/DukeAidanHall/C-n-k-ombiEval7" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <p>Advanced 7-card Poker Hand Evaluation Calculator using combinatorics optimization to reduce runtime and memory usage.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Dart</span>
+            <span class="tech-tag">Algorithms</span>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Form-Filling AI Agent</h3>
+            <div class="project-links">
+              <a href="https://github.com/DukeAidanHall/Form-Filling-Automation-Agent" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <p>Python-based AI agent for automated form completion using human-like behavior and GPT-Neo responses to a wide variety of forms.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Selenium</span>
+            <span class="tech-tag">AI</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- AWARDS -->
-  <section id="awards">
-    <div class="section-title">Awards</div>
-    <div class="award-item">
-      <h3>Math Team Honors</h3>
-      <ul>
-        <li>2-Time ICTM Regionals Individual Champion</li>
-        <li>3-Time ICTM State Top 10 Scorer (Oral/Calculator)</li>
-        <li>Former IML & ICTM Perfect Scorer</li>
-        <li>Deli Metz - Thomas Nelson Outstanding Math Award</li>
-        <li>WSML Math Leadership Award</li>
-      </ul>
-    </div>
-    <div class="award-item">
-      <h3>Scholarship Recognitions</h3>
-      <ul>
-        <li>Taco Bell Live Más Scholarship (2x Recipient)</li>
-        <li>Morehead-Cain Scholarship Semifinalist (UNC)</li>
-        <li>Hometown Pride Scholarship Finalist</li>
-      </ul>
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Programming Languages</h3>
+          <div class="skill-items">
+            <div class="skill-item" data-level="90">Java</div>
+            <div class="skill-item" data-level="90">Flutter/Dart</div>
+            <div class="skill-item" data-level="80">Python</div>
+            <div class="skill-item" data-level="75">C</div>
+            <div class="skill-item" data-level="70">C#</div>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Web Technologies</h3>
+          <div class="skill-items">
+            <div class="skill-item" data-level="85">HTML/CSS</div>
+            <div class="skill-item" data-level="80">JavaScript</div>
+            <div class="skill-item" data-level="70">React</div>
+            <div class="skill-item" data-level="70">Flask</div>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Cloud & DevOps</h3>
+          <div class="skill-items">
+            <div class="skill-item" data-level="90">Azure Logic Apps</div>
+            <div class="skill-item" data-level="90">Git/GitHub</div>
+            <div class="skill-item" data-level="85">SQL Server</div>
+            <div class="skill-item" data-level="80">Dynamics 365</div>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h3>AI & Machine Learning</h3>
+          <div class="skill-items">
+            <div class="skill-item" data-level="95">OpenAI API</div>
+            <div class="skill-item" data-level="80">Vertex AI</div>
+            <div class="skill-item" data-level="75">n8n</div>
+            <div class="skill-item" data-level="70">Prompt Engineering</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-title">Technical Skills</div>
-    <div class="skills-grid">
-      <div class="skill-badge">Java</div>
-      <div class="skill-badge">C</div>
-      <div class="skill-badge">Python</div>
-      <div class="skill-badge">Unreal Engine</div>
-      <div class="skill-badge">Flutter (Dart)</div>
-      <div class="skill-badge">Excel</div>
-      <div class="skill-badge">GameMaker</div>
-      <div class="skill-badge">WeVideo</div>
-      <div class="skill-badge">MIPS Assembly</div>
-      <div class="skill-badge">Logisim</div>
-      <div class="skill-badge">Git/GitHub</div>
+  <!-- Awards Section -->
+  <section id="awards" class="awards">
+    <div class="container">
+      <h2 class="section-title">Awards & Recognition</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Academic Excellence</h3>
+            <div class="project-links">
+              <i class="fas fa-trophy"></i>
+            </div>
+          </div>
+          <ul>
+            <li>3-Time Taco Bell Live Más Scholarship Recipient ($15,000 - Top 3% of 10,000+ Applicants)</li>
+            <li>Morehead-Cain Scholarship Semifinalist (UNC Full Ride Award ~$320,000)</li>
+            <li>Duke University Dean's List with Distinction (Top 10% Student GPA)</li>
+            <li>2025 CS Department Outstanding TA Award</li>
+            <li>Hometown Pride Scholarship Finalist (Top 2% of 1,500+ Applicants)</li>
+            <li>AP Scholar with Distinction (Eleven AP Tests with Score 4+)</li>
+          </ul>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Mathematics Achievements</h3>
+            <div class="project-links">
+              <i class="fas fa-calculator"></i>
+            </div>
+          </div>
+          <ul>
+            <li>Illinois Council of Teachers of Mathematics (ICTM) Regionals 2-Time Individual Champion</li>
+            <li>ICTM State 3-Time Top 10 Scorer (Oral Competition / Calculator Team)</li>
+            <li>ICTM Individual Perfect Scorer</li>
+            <li>Illinois Math League (IML) Individual Perfect Scorer</li>
+            <li>Del Meítz - Thomas Nelson Outstanding Math Award</li>
+            <li>West Suburban Math League (WSML) MVP Math Leadership Award</li>
+          </ul>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Creative & Leadership</h3>
+            <div class="project-links">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <ul>
+            <li>Co-Founder of SpeakEasy</li>
+            <li>Taco Bell Summer of Connection Programs (2023 & 2024)</li>
+            <li>Community Volunteer at Duke Adaptive Explorers</li>
+            <li>Theta Chi Fraternity (Athletic Chair)</li>
+            <li>Duke Club Rowing / Running / Cricket</li>
+            <li>Founder of a Summer Math Camp for my High School</li>
+            <li>Former President of Elmhurst Prairie Path Volunteers (EPPV)</li>
+            <li>Raised $21,000 for Local Schools through Game Fundraisers</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-title">Contact</div>
-    <div class="contact-info">
-      <p><strong>Phone:</strong> 1-224-221-8070</p>
-      <p><strong>Email:</strong> <a href="mailto:studentaidanhall@gmail.com">studentaidanhall@gmail.com</a></p>
-      <p><strong>Location:</strong> Elmhurst, IL 60126</p>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-header">
+            <h3>Let's Connect</h3>
+            <p>I'm always open to discussing new opportunities, collaborations, or just having a great conversation about tech!</p>
+            <p>Email: studentaidanhall@gmail.com</p>
+            <p>Phone: 224-221-8070</p>
+          </div>
+          
+          <div class="social-links">
+            <h3></h3>
+            <div class="social-grid">
+              <a href="https://www.linkedin.com/in/aidan-hall-30255025a" target="_blank" class="social-link">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/DukeAidanHall" target="_blank" class="social-link">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://leetcode.com/u/AidanHall/" target="_blank" class="social-link">
+                <i class="fas fa-code"></i>
+                <span>LeetCode</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>Email</h3>
+              <p>studentaidanhall@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h3>Phone</h3>
+              <p>+1 (224) 221-8070</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>Location</h3>
+              <p>Durham, NC</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-graduation-cap"></i>
+            <div>
+              <h3>Education</h3>
+              <p>Duke University</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-calendar-alt"></i>
+            <div>
+              <h3>Availability</h3>
+              <p>Open to opportunities</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" name="name" required>
+              <label for="name">Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" required></textarea>
+              <label for="message">Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <form>
-      <div style="margin-bottom: 1rem;">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name">
-      </div>
-      <div style="margin-bottom: 1rem;">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email">
-      </div>
-      <div style="margin-bottom: 1rem;">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5"></textarea>
-      </div>
-      <button type="submit">Send</button>
-    </form>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; <span id="year"></span> Aidan Hall. All Rights Reserved.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <p>&copy; 2025 Aidan Hall. Built with passion and precision.</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/aidan-hall-30255025a" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/DukeAidanHall" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://leetcode.com/u/AidanHall/" target="_blank"><i class="fas fa-code"></i></a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Update Footer Year
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      // Intersection Observer for active nav link
-      const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll("nav ul li a.nav-link");
-
-      const options = {
-        root: null,
-        threshold: 0.5
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            navLinks.forEach(link => link.classList.remove("active"));
-            const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
-            if (activeLink) activeLink.classList.add("active");
-          }
-        });
-      }, options);
-
-      sections.forEach(section => observer.observe(section));
-
-      // Smooth scroll for nav links
-      document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          document.querySelector(targetId).scrollIntoView({
-            behavior: "smooth"
-          });
-        });
-      });
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="animations.js"></script>
 </body>
 </html>
