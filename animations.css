@@ -1144,3 +1144,32 @@ section:first-of-type {
   color: var(--accent-primary);
 }
 
+/* keep everything you already had ... */
+
+/* Research & Activities sections use the same grid style as projects */
+.research .projects-grid,
+.activities .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.research .project-card,
+.activities .project-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.research .project-card:hover,
+.activities .project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+.activities .project-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}

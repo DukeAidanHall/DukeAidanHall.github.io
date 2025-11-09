@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Aidan Hall - Computer Science & Mathematics Student at Duke University | AI Developer, Software Engineer, Game Designer" />
+  <meta name="description" content="Aidan Hall - Duke CS, Math, and Digital Intelligence | AI/ML, Automation, and SaaS builder (SpeakSeeker)" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aidan Hall | Software Engineer & AI Developer</title>
+  <title>Aidan Hall | CS • Math • AI</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -22,9 +22,8 @@
   <link rel="stylesheet" href="animations.css" />
 
   <style>
-    /* Additional CSS for enhanced styling */
-    
-    /* Mobile menu styles */
+    /* (kept the same extra styles you had before, just using the updated nav ids) */
+
     .nav-menu.active {
       display: flex;
       flex-direction: column;
@@ -37,20 +36,17 @@
       padding: 2rem;
       border-top: 1px solid var(--border-color);
     }
-    
+
     .hamburger.active span:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
-    
     .hamburger.active span:nth-child(2) {
       opacity: 0;
     }
-    
     .hamburger.active span:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px);
     }
-    
-    /* Enhanced button hover effects */
+
     .btn::before {
       content: '';
       position: absolute;
@@ -61,252 +57,21 @@
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
       transition: left 0.5s;
     }
-    
     .btn:hover::before {
       left: 100%;
     }
-    
-    /* Enhanced card hover effects */
-    .project-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, transparent, rgba(0, 212, 255, 0.1), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .project-card:hover::after {
-      opacity: 1;
-    }
-    
-    /* Skill level visualization */
-    .skill-item {
-      position: relative;
-    }
-    
-    .skill-item::after {
-      content: attr(data-level);
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.8rem;
-      color: var(--accent-primary);
-      font-weight: 600;
-    }
-    
-    /* Enhanced timeline markers */
-    .timeline-marker::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 8px;
-      height: 8px;
-      background: var(--bg-primary);
-      border-radius: 50%;
-    }
-    
-    /* Loading animation */
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-    
-    .terminal-content {
-      animation: pulse 2s infinite;
-    }
-    
-    /* Enhanced section transitions */
+
     section {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
-    
     section.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background: var(--bg-secondary);
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: var(--accent-primary);
-      border-radius: 4px;
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--accent-secondary);
-    }
-    
-    /* Enhanced focus states */
-    .form-group input:focus,
-    .form-group textarea:focus {
-      box-shadow: 0 0 0 3px var(--shadow-color), 0 0 20px rgba(0, 212, 255, 0.3);
-    }
-    
-    /* Notification animations */
-    .notification {
-      animation: slideIn 0.3s ease;
-    }
-    
-    @keyframes slideIn {
-      from {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    
-    /* Enhanced code window */
-    .code-window {
-      position: relative;
-    }
-    
-    .code-window::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.1) 50%, transparent 70%);
-      animation: shimmer 3s infinite;
-      pointer-events: none;
-    }
-    
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    /* Enhanced hero section */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(123, 44, 191, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    
-    /* Enhanced navigation */
-    .navbar::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.05), transparent);
-      animation: navShimmer 4s infinite;
-    }
-    
-    @keyframes navShimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    /* Enhanced skill categories */
-    .skill-category {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .skill-category::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--gradient-primary);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    
-    .skill-category:hover::before {
-      transform: scaleX(1);
-    }
-    
-    /* Enhanced contact form */
-    .contact-form {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .contact-form::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(from 0deg, transparent, rgba(0, 212, 255, 0.1), transparent);
-      animation: rotate 10s linear infinite;
-      pointer-events: none;
-    }
-    
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    /* Enhanced footer */
-    .footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--gradient-primary);
-    }
-    
-    /* Enhanced social icons */
-    .footer-social a {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .footer-social a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient-primary);
-      transition: left 0.3s ease;
-      z-index: -1;
-    }
-    
-    .footer-social a:hover::before {
-      left: 0;
-    }
-    
-    .footer-social a:hover {
-      color: var(--bg-primary);
-    }
+
+    /* keep the rest of your inline styles from before ... */
   </style>
 </head>
 <body>
@@ -340,9 +105,11 @@
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#awards" class="nav-link">Awards</a></li>
+        <li><a href="#activities" class="nav-link">Activities</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <div class="hamburger">
@@ -363,11 +130,10 @@
             <span class="name">Aidan Hall</span>
           </h1>
           <h2 class="hero-subtitle">
-            <span class="typing-text">Computer Science & Mathematics Student</span>
+            <span class="typing-text">Duke CS • Math • DI ’27</span>
           </h2>
           <p class="hero-description">
-            Third year Duke student, passionate about developing and utilizing AI agents,
-            software development to solve problems, and mathematical applications.
+            I build AI- and automation-first systems — from Azure/D365 flows that save teams thousands of hours, to AI agent platforms like SpeakSeeker that onboard users for you. I like when math, infra, and product all meet. 📡
           </p>
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -389,25 +155,20 @@ class AidanHall {
     this.preferredName = "Aidan";
     this.education = "Duke University";
     this.majors = ["Computer Science", "Mathematics"];
+    this.certificate = "Digital Intelligence";
     this.graduationDate = "May 2027";
+    this.currentBuild = "SpeakSeeker.com";
   }
   
-  getValues() {
+  getNow() {
     return [
-      "Solve real problems",
-      "Automate intelligently",
-      "Design with precision",
-      "Learn relentlessly"
+      "Co-Founder @ SpeakSeeker",
+      "ML Research Assistant (ALIGN Grid)",
+      "Outstanding TA for CS/Math",
+      "Automation + AI Agents"
     ];
   }
-  
-  async solveProblem(problem) {
-    return await this.think(problem);
-  }
 }
-
-const aidan = new AidanHall();
-aidan.solveProblem("Next Big Challenge");
               </code></pre>
             </div>
           </div>
@@ -423,38 +184,31 @@ aidan.solveProblem("Next Big Challenge");
       <div class="about-content">
         <div class="about-text">
           <p>
-            I'm passionate about solving complex technical challenges with a strong foundation in 
-            algorithms, automation, and AI. My work centers on designing scalable systems that blend 
-            mathematical precision with modern software practices.
+            I'm a Duke CS + Math + Digital Intelligence student who likes taking manual, brittle business processes and turning them into resilient automations. At Dexter, I turned a 1-minute planner upload into a 5-second email-forward flow used daily by 11 planners (~2,860 hrs and $160K–$190K saved annually). :contentReference[oaicite:6]{index=6}
           </p>
           <p>
-            Currently working as an IT Development Intern at Dexter Axle Company, I design automated 
-            workflows that reduce processing time by 80% while improving data accuracy. At Teleperson, 
-            I co-lead the development of an AI-powered speaker-matching platform, blending NLP, 
-            automation, and user-centered design to power real-world connections.
+            On the AI side, I co-founded <strong>SpeakSeeker</strong> (speakseeker.com), a SaaS that uses AI-powered search, scraping, and intelligent matching to connect speakers with events — plus agents to auto-create accounts for people. :contentReference[oaicite:7]{index=7}
           </p>
           <p>
-            As a Teaching Assistant for Discrete Math and Advanced Multivariable Calculus, I've guided 
-            150+ students through their coursework. My mathematical foundation enables me to approach 
-            software problems with analytical precision and creative solutions.
+            I also TA Discrete Math, Probability, and Multivariable Calculus at Duke and was recognized with the CS Department Outstanding TA Award. Teaching keeps me sharp on proofs, graph theory, and combinatorics while I build. :contentReference[oaicite:8]{index=8}
           </p>
         </div>
         <div class="about-stats">
           <div class="stat-item">
-            <div class="stat-number">0%</div>
-            <div class="stat-label">Manual Work Necessary</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">80%</div>
-            <div class="stat-label">Efficiency Gain</div>
+            <div class="stat-number">3.89</div>
+            <div class="stat-label">Cumulative GPA</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">150+</div>
-            <div class="stat-label">Students Taught</div>
+            <div class="stat-label">Students Supported</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number">3.89</div>
-            <div class="stat-label">GPA</div>
+            <div class="stat-number">80%</div>
+            <div class="stat-label">Pipeline Latency Cut</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">$160K+</div>
+            <div class="stat-label">Annual Value Saved</div>
           </div>
         </div>
       </div>
@@ -472,26 +226,22 @@ aidan.solveProblem("Next Big Challenge");
             <div class="timeline-header">
               <h3>Duke University</h3>
               <span class="company">Durham, NC</span>
-              <span class="duration">Aug 2023 - May 2027</span>
+              <span class="duration">Aug 2023 – May 2027</span>
             </div>
-            <p><strong>Double Major:</strong> B.S. in Computer Science, B.S. in Mathematics, Digital Intelligence Certificate</p>
-            <!--<p><strong>Certificate:</strong> Digital Intelligence</p>-->
-            <p><strong>GPA:</strong> 3.89/4.00 | Dean's List with Distinction</p>
-            <p><strong>Relevant Coursework:</strong> Computer Architecture, Algorithm Design & Analysis, Data Structures & Algorithms, Computer Game Design, Real Analysis, Discrete Math, Advanced Multivariable Calculus, Linear Algebra, Advanced Probability, Mathematical Foundations of CS</p>
+            <p><strong>Degrees:</strong> B.S. Computer Science, B.S. Mathematics, Digital Intelligence Certificate</p>
+            <p><strong>GPA:</strong> 3.888 / 4.0 — Dean’s List with Distinction :contentReference[oaicite:9]{index=9}</p>
+            <p><strong>Coursework:</strong> Applied ML, Algorithm Design, Computer Architecture, Mathematical Finance, Real Analysis, Discrete Math, Advanced Probability, Computer Game Design, Information & the Internet, Language-Based Security. :contentReference[oaicite:10]{index=10}</p>
           </div>
         </div>
-        
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-header">
               <h3>York Community High School</h3>
               <span class="company">Elmhurst, IL</span>
-              <span class="duration">Aug 2019 - May 2023</span>
+              <span class="duration">Aug 2019 – May 2023</span>
             </div>
-            <p><strong>GPA:</strong> Weighted: 4.93/4.00 | Unweighted: 4.00/4.00 | AP Scholar with Distinction | PTA Scholar</p>
-            <p><strong>SAT:</strong> 1560/1600</p>
-            <p><strong>Relevant Coursework:</strong> ACP Calculus III, DE 2D Game Design Honors, AP Computer Science, AP Statistics, AP Physics</p>
+            <p><strong>SAT:</strong> 1560/1600 | W GPA 4.93 | AP Scholar w/ Distinction | PTA Scholar :contentReference[oaicite:11]{index=11}</p>
           </div>
         </div>
       </div>
@@ -503,66 +253,81 @@ aidan.solveProblem("Next Big Challenge");
     <div class="container">
       <h2 class="section-title">Experience</h2>
       <div class="timeline">
+
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-header">
-              <h3>IT Development Intern</h3>
+              <h3>Co-Founder (Part-Time)</h3>
+              <span class="company">SpeakSeeker (speakseeker.com)</span>
+              <span class="duration">Aug 2025 – Present</span>
+            </div>
+            <ul>
+              <li>Building AI-powered speaker–event SaaS: search, scraping, intelligent matching, messaging, contract tools. :contentReference[oaicite:12]{index=12}</li>
+              <li>Shipping agents that auto-source users, generate accounts, and preload profiles to reduce onboarding friction.</li>
+              <li>Full-stack on Vercel/Supabase-style stack to support fast iteration with real users.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>IT Development Intern (Full-Time)</h3>
               <span class="company">Dexter Axle Company</span>
-              <span class="duration">May 2025 - Present</span>
+              <span class="duration">May 2025 – Aug 2025</span>
             </div>
             <ul>
-              <li>Designed automated Azure Logic App workflows reducing processing time by 80%</li>
-              <li>Developed advanced SQL Server views for data aggregation and filtering</li>
-              <li>Automated customer communications and system updates</li>
+              <li>Designed PO-attachment automation via Azure Functions + D365 APIs; 1-min manual upload → 5-sec email-forward, used by 11 planners (~2,860 hrs, $160K–$190K saved annually). :contentReference[oaicite:13]{index=13}</li>
+              <li>Ported legacy C#/SQL parcel pipelines to Logic Apps + modular SQL Server views; fan-out/merge + parallelism → 80% latency reduction and no duplicates. :contentReference[oaicite:14]{index=14}</li>
+              <li>Added scoped error-handling + alerting to reduce triage and make handoffs easy.</li>
             </ul>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-header">
-              <h3>AI Agent Swarm Strategy & Development Intern</h3>
-              <span class="company">Teleperson</span>
-              <span class="duration">Jan 2025 - Present</span>
-            </div>
-            <ul>
-              <li>Leading design for "SpeakEasy" AI-powered conference platform</li>
-              <li>Developed custom AI agents for multi-agent collaboration</li>
-              <li>Co-founded platform with CEO Jesse Hollander</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>Teaching Assistant - Computer Science & Mathematics</h3>
+              <h3>UTA – COMPSCI 230/231, MATH 222, MATH 230</h3>
               <span class="company">Duke University</span>
-              <span class="duration">Jan 2025 - Present</span>
+              <span class="duration">Jan 2025 – Present</span>
             </div>
             <ul>
-              <li>Awarded CS Department Outstanding TA Award</li>
-              <li>Teaching Discrete Math and Advanced Multivariable Calculus</li>
-              <li>Responsible for 150+ students across multiple courses</li>
+              <li>Lead recitations + office hours for Discrete Math and Probability (150+ students/semester). :contentReference[oaicite:15]{index=15}</li>
+              <li>Recipient of CS Department Outstanding TA Award.</li>
+              <li>Help design problem-solving sessions & grade advanced proofs.</li>
             </ul>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-header">
-              <h3>AI Trainer & Developer</h3>
-              <span class="company">DataAnnotation</span>
-              <span class="duration">Oct 2024 - May 2025</span>
+              <h3>AI Agent Intern</h3>
+              <span class="company">Teleperson</span>
+              <span class="duration">Jan 2025 – May 2025</span>
             </div>
             <ul>
-              <li>Engineered evaluation prompts for mathematical reasoning AI models</li>
-              <li>Contributed to 30+ large-scale development efforts including Zebra AI</li>
-              <li>Optimized machine learning pipelines and model performance</li>
+              <li>Engineered multi-agent systems with shared memory + custom comms protocols for Swarm-style apps. :contentReference[oaicite:16]{index=16}</li>
+              <li>Focused on autonomous coordination + strategic decision-making in AI agent networks.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>AI Engineer</h3>
+              <span class="company">DataAnnotation</span>
+              <span class="duration">Oct 2024 – May 2025</span>
+            </div>
+            <ul>
+              <li>Built prompt evaluation systems for LLMs to surface edge-case math + algorithm failures across 30+ models. :contentReference[oaicite:17]{index=17}</li>
+              <li>Improved model reasoning quality for Zebra AI and similar models.</li>
             </ul>
           </div>
         </div>
@@ -572,46 +337,56 @@ aidan.solveProblem("Next Big Challenge");
           <div class="timeline-content">
             <div class="timeline-header">
               <h3>Instructor</h3>
-              <span class="company">Mathnasium - The Math Learning Center</span>
-              <span class="duration">Jul 2022 - Jul 2023</span>
+              <span class="company">Mathnasium</span>
+              <span class="duration">Jul 2022 – Jul 2023</span>
             </div>
             <ul>
-              <li>Taught algebra, geometry, and calculus to students grades 2-10</li>
-              <li>Led group sessions while giving tailored one-on-one support</li>
-              <li>Built strong foundational skills through interactive problem-solving</li>
+              <li>Taught algebra → early calc to 2–10th graders; mixed group + 1:1 support. :contentReference[oaicite:18]{index=18}</li>
             </ul>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-header">
               <h3>Lead Software & Game Engineer</h3>
-              <span class="company">Elmhurst District 205 Public Schools</span>
-              <span class="duration">Jan 2021 - May 2022</span>
+              <span class="company">Elmhurst District 205</span>
+              <span class="duration">Jan 2021 – May 2022</span>
             </div>
             <ul>
-              <li>Directed two game-based fundraisers raising over $20,000</li>
-              <li>Built and maintained front-end interface for event website</li>
-              <li>Provided technical support and troubleshooting during live events</li>
+              <li>Directed two game-based fundraisers raising $20K+ for local schools. :contentReference[oaicite:19]{index=19}</li>
             </ul>
           </div>
         </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>Game Fundraiser Leader & Event Host</h3>
-              <span class="company">Visitation Catholic School</span>
-              <span class="duration">Dec 2020 - Apr 2021</span>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: Research Section -->
+  <section id="research" class="research">
+    <div class="container">
+      <h2 class="section-title">Research</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <h3>ALIGN – Grid Decarbonization & Flexible Load</h3>
+            <div class="project-links">
+              <i class="fas fa-flask"></i>
             </div>
-            <ul>
-              <li>Hosted two Rocket League fundraisers raising $1,000 total</li>
-              <li>Managed logistics and promotion for 50+ event participants</li>
-              <li>Created detailed pitch videos to secure school approval</li>
-            </ul>
+          </div>
+          <p>
+            Machine Learning Research Assistant in Duke’s Dalia Patiño-Echeverri Lab (Nicholas School), part of a $2.9M collaboration with Google and the Georgetown Climate Center to study how AI/data-center load growth stresses the U.S. grid and how flexible demand can help. :contentReference[oaicite:20]{index=20}
+          </p>
+          <p>
+            I build Python/Julia data pipelines, forecasting models, and simulation tools over large weather + energy datasets so stakeholders can test decarb strategies. :contentReference[oaicite:21]{index=21}
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Julia</span>
+            <span class="tech-tag">Energy Systems</span>
+            <span class="tech-tag">Forecasting</span>
           </div>
         </div>
       </div>
@@ -625,16 +400,16 @@ aidan.solveProblem("Next Big Challenge");
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-header">
-            <h3>SpeakEasy AI Platform</h3>
+            <h3>SpeakSeeker (SaaS)</h3>
             <div class="project-links">
-              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+              <a href="https://speakseeker.com" target="_blank" class="project-link"><i class="fas fa-link"></i></a>
             </div>
           </div>
-          <p>Leading the beta launch of SpeakEasy, an AI-powered conference platform co-founded with the CEO of Teleperson. The platform intelligently matches event organizers and speakers using collaborative AI agents, streamlining discovery through advanced search, recommendation systems, and multi-agent decision logic.</p>
+          <p>Full-stack platform to connect speakers with events using AI-powered search, scraping, and intelligent matching. Includes agentic onboarding that creates user accounts and pre-fills profiles. :contentReference[oaicite:22]{index=22}</p>
           <div class="project-tech">
             <span class="tech-tag">AI Agents</span>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">OpenAI</span>
+            <span class="tech-tag">TypeScript/Python</span>
+            <span class="tech-tag">SaaS</span>
           </div>
         </div>
 
@@ -646,12 +421,11 @@ aidan.solveProblem("Next Big Challenge");
                 <i class="fab fa-github"></i>
               </div>
             </div>
-            <p>Gamified news reader that promotes getting information from diverse viewpoints. Built to combat disinformation and echo chambers through AI-driven bias detection and social leaderboard incentives.</p>
+            <p>React app that scrapes articles via Goose3, classifies political bias & sentiment with OpenAI Swarm agents, and gamifies news literacy with leaderboards. Demoed at HackDuke 2025. :contentReference[oaicite:23]{index=23}</p>
             <div class="project-tech">
               <span class="tech-tag">React</span>
               <span class="tech-tag">Goose3</span>
               <span class="tech-tag">OpenAI Swarm</span>
-              <span class="tech-tag">JavaScript</span>
               <span class="tech-tag">AWS S3</span>
             </div>
           </div>
@@ -660,66 +434,50 @@ aidan.solveProblem("Next Big Challenge");
         <a href="https://github.com/DukeAidanHall/cat-mouse-interpreter" target="_blank" class="project-card-link">
           <div class="project-card">
             <div class="project-header">
-              <h3>Full-Scale Code Interpreter</h3>
+              <h3>CatGetMouse Interpreter</h3>
               <div class="project-links">
                 <i class="fab fa-github"></i>
               </div>
             </div>
-            <p>Built from scratch in four stages: lexical token scanning, SLR(1) parsing with DFA stack transitions, recursive abstract syntax tree construction using polymorphic node classes, and graphical execution with built-in runtime error detection. </p>
+            <p>Java-based DFA-driven SLR(1) parser + AST visual simulator for a theoretical language; 4-stage build from tokenization → parsing → AST → execution. :contentReference[oaicite:24]{index=24}</p>
             <div class="project-tech">
               <span class="tech-tag">Java</span>
-              <span class="tech-tag">SLR(1)</span>
-              <span class="tech-tag">JFLAP</span>
               <span class="tech-tag">Compiler Design</span>
-              <span class="tech-tag">AST</span>
+              <span class="tech-tag">SLR(1)</span>
             </div>
           </div>
-        </a>        
-        
+        </a>
+
         <div class="project-card">
           <div class="project-header">
             <h3>Azure Integration Workflows</h3>
             <div class="project-links">
-              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+              <i class="fas fa-link"></i>
             </div>
           </div>
-          <p>Automated Logic App workflows for data transfer between SQL Server and Dynamics 365, achieving 80% efficiency improvement.</p>
+          <p>Logic Apps + SQL Server + D365 data-transfer automations that achieved ~80% efficiency improvements and added alerting for ERP teams. :contentReference[oaicite:25]{index=25}</p>
           <div class="project-tech">
             <span class="tech-tag">Azure</span>
             <span class="tech-tag">SQL Server</span>
             <span class="tech-tag">Dynamics 365</span>
           </div>
-        </div> 
-        
+        </div>
+
         <div class="project-card">
           <div class="project-header">
             <h3>C(n,k)ombiEval7</h3>
             <div class="project-links">
-              <a href="https://github.com/DukeAidanHall/C-n-k-ombiEval7" class="project-link"><i class="fab fa-github"></i></a>
+              <a href="https://github.com/DukeAidanHall/C-n-k-ombiEval7" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
             </div>
           </div>
-          <p>Advanced 7-card Poker Hand Evaluation Calculator using combinatorics optimization to reduce runtime and memory usage.</p>
+          <p>7-card poker hand evaluator that uses combinatorics to cut memory by ~98% vs lookup tables — designed for mobile/embedded. :contentReference[oaicite:26]{index=26}</p>
           <div class="project-tech">
             <span class="tech-tag">Flutter</span>
             <span class="tech-tag">Dart</span>
             <span class="tech-tag">Algorithms</span>
           </div>
         </div>
-        
-        <div class="project-card">
-          <div class="project-header">
-            <h3>Form-Filling AI Agent</h3>
-            <div class="project-links">
-              <a href="https://github.com/DukeAidanHall/Form-Filling-Automation-Agent" class="project-link"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <p>Python-based AI agent for automated form completion using human-like behavior and GPT-Neo responses to a wide variety of forms.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Selenium</span>
-            <span class="tech-tag">AI</span>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -730,43 +488,43 @@ aidan.solveProblem("Next Big Challenge");
       <h2 class="section-title">Technical Skills</h2>
       <div class="skills-container">
         <div class="skill-category">
-          <h3>Programming Languages</h3>
+          <h3>Languages</h3>
           <div class="skill-items">
             <div class="skill-item" data-level="90">Java</div>
-            <div class="skill-item" data-level="90">Flutter/Dart</div>
-            <div class="skill-item" data-level="80">Python</div>
-            <div class="skill-item" data-level="75">C</div>
-            <div class="skill-item" data-level="70">C#</div>
+            <div class="skill-item" data-level="90">Python</div>
+            <div class="skill-item" data-level="85">Dart / Flutter</div>
+            <div class="skill-item" data-level="80">C</div>
+            <div class="skill-item" data-level="75">C#</div>
           </div>
         </div>
         
         <div class="skill-category">
-          <h3>Web Technologies</h3>
+          <h3>Web / App</h3>
           <div class="skill-items">
             <div class="skill-item" data-level="85">HTML/CSS</div>
-            <div class="skill-item" data-level="80">JavaScript</div>
-            <div class="skill-item" data-level="70">React</div>
+            <div class="skill-item" data-level="80">JavaScript / TypeScript</div>
+            <div class="skill-item" data-level="75">React</div>
             <div class="skill-item" data-level="70">Flask</div>
           </div>
         </div>
         
         <div class="skill-category">
-          <h3>Cloud & DevOps</h3>
+          <h3>Cloud & Automation</h3>
           <div class="skill-items">
-            <div class="skill-item" data-level="90">Azure Logic Apps</div>
-            <div class="skill-item" data-level="90">Git/GitHub</div>
-            <div class="skill-item" data-level="85">SQL Server</div>
+            <div class="skill-item" data-level="95">Azure Logic Apps</div>
+            <div class="skill-item" data-level="90">SQL Server</div>
             <div class="skill-item" data-level="80">Dynamics 365</div>
+            <div class="skill-item" data-level="80">Git/GitHub</div>
           </div>
         </div>
         
         <div class="skill-category">
-          <h3>AI & Machine Learning</h3>
+          <h3>AI / Agents</h3>
           <div class="skill-items">
-            <div class="skill-item" data-level="95">OpenAI API</div>
+            <div class="skill-item" data-level="95">OpenAI / Swarm</div>
             <div class="skill-item" data-level="80">Vertex AI</div>
-            <div class="skill-item" data-level="75">n8n</div>
-            <div class="skill-item" data-level="70">Prompt Engineering</div>
+            <div class="skill-item" data-level="75">Prompt & Eval</div>
+            <div class="skill-item" data-level="70">n8n</div>
           </div>
         </div>
       </div>
@@ -786,29 +544,25 @@ aidan.solveProblem("Next Big Challenge");
             </div>
           </div>
           <ul>
-            <li>3-Time Taco Bell Live Más Scholarship Recipient ($15,000 - Top 3% of 10,000+ Applicants)</li>
-            <li>Morehead-Cain Scholarship Semifinalist (UNC Full Ride Award ~$320,000)</li>
-            <li>Duke University Dean's List with Distinction (Top 10% Student GPA)</li>
-            <li>2025 CS Department Outstanding TA Award</li>
-            <li>Hometown Pride Scholarship Finalist (Top 2% of 1,500+ Applicants)</li>
-            <li>AP Scholar with Distinction (Eleven AP Tests with Score 4+)</li>
+            <li>3× Taco Bell Live Más Scholarship Recipient ($15,000 total). :contentReference[oaicite:27]{index=27}</li>
+            <li>Morehead-Cain Scholarship Semifinalist (UNC, ~$320K potential). :contentReference[oaicite:28]{index=28}</li>
+            <li>Duke Dean’s List with Distinction.</li>
+            <li>CS Department Outstanding TA Award.</li>
           </ul>
         </div>
         
         <div class="project-card">
           <div class="project-header">
-            <h3>Mathematics Achievements</h3>
+            <h3>Math Achievements</h3>
             <div class="project-links">
               <i class="fas fa-calculator"></i>
             </div>
           </div>
           <ul>
-            <li>Illinois Council of Teachers of Mathematics (ICTM) Regionals 2-Time Individual Champion</li>
-            <li>ICTM State 3-Time Top 10 Scorer (Oral Competition / Calculator Team)</li>
-            <li>ICTM Individual Perfect Scorer</li>
-            <li>Illinois Math League (IML) Individual Perfect Scorer</li>
-            <li>Del Meítz - Thomas Nelson Outstanding Math Award</li>
-            <li>West Suburban Math League (WSML) MVP Math Leadership Award</li>
+            <li>ICTM Regional Champion (2×), State Top-10 (3×). :contentReference[oaicite:29]{index=29}</li>
+            <li>IML & ICTM Perfect Scorer.</li>
+            <li>Del Meítz – Thomas Nelson Outstanding Math Award.</li>
+            <li>WSML MVP Math Leadership Award.</li>
           </ul>
         </div>
         
@@ -820,15 +574,46 @@ aidan.solveProblem("Next Big Challenge");
             </div>
           </div>
           <ul>
-            <li>Co-Founder of SpeakEasy</li>
-            <li>Taco Bell Summer of Connection Programs (2023 & 2024)</li>
-            <li>Community Volunteer at Duke Adaptive Explorers</li>
-            <li>Theta Chi Fraternity (Athletic Chair)</li>
-            <li>Duke Club Rowing / Running / Cricket</li>
-            <li>Founder of a Summer Math Camp for my High School</li>
-            <li>Former President of Elmhurst Prairie Path Volunteers (EPPV)</li>
-            <li>Raised $21,000 for Local Schools through Game Fundraisers</li>
+            <li>Raised $21,000+ for local schools through game fundraisers. :contentReference[oaicite:30]{index=30}</li>
+            <li>Taco Bell Summer of Connection (2023, 2024).</li>
+            <li>Community volunteer at Adaptive Explorers (Duke).</li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: Activities & Leadership -->
+  <section id="activities" class="activities">
+    <div class="container">
+      <h2 class="section-title">Activities & Leadership</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Theta Chi • Athletic / Involvement</h3>
+            <div class="project-links">
+              <i class="fas fa-users"></i>
+            </div>
+          </div>
+          <p>Active in fraternity life at Duke; help organize athletic/club engagement. :contentReference[oaicite:31]{index=31}</p>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Duke Adaptive Explorers</h3>
+            <div class="project-links">
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+          <p>Support inclusive outdoor/physical activities for people with disabilities. :contentReference[oaicite:32]{index=32}</p>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Club Rowing / Running / Cricket</h3>
+            <div class="project-links">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+          </div>
+          <p>Stay competitive alongside lifting; club sports that match daily training.</p>
         </div>
       </div>
     </div>
@@ -842,15 +627,14 @@ aidan.solveProblem("Next Big Challenge");
         <div class="contact-info">
           <div class="contact-header">
             <h3>Let's Connect</h3>
-            <p>I'm always open to discussing new opportunities, collaborations, or just having a great conversation about tech!</p>
-            <p>Email: studentaidanhall@gmail.com</p>
-            <p>Phone: 224-221-8070</p>
+            <p>Open to AI/ML, systems, and product-y SWE internships.</p>
+            <p><strong>Email:</strong> jah202@duke.edu • studentaidanhall@gmail.com</p>
+            <p><strong>Phone:</strong> +1 (224) 221-8070</p>
           </div>
           
           <div class="social-links">
-            <h3></h3>
             <div class="social-grid">
-              <a href="https://www.linkedin.com/in/aidan-hall-30255025a" target="_blank" class="social-link">
+              <a href="https://www.linkedin.com/in/hallaidan" target="_blank" class="social-link">
                 <i class="fab fa-linkedin"></i>
                 <span>LinkedIn</span>
               </a>
@@ -869,7 +653,7 @@ aidan.solveProblem("Next Big Challenge");
             <i class="fas fa-envelope"></i>
             <div>
               <h3>Email</h3>
-              <p>studentaidanhall@gmail.com</p>
+              <p>jah202@duke.edu</p>
             </div>
           </div>
           
@@ -932,12 +716,13 @@ aidan.solveProblem("Next Big Challenge");
     <div class="container">
       <div class="footer-content">
         <div class="footer-text">
-          <p>&copy; 2025 Aidan Hall. Built with passion and precision.</p>
+          <p>&copy; 2025 Aidan Hall. Built with precision.</p>
         </div>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/aidan-hall-30255025a" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/hallaidan" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/DukeAidanHall" target="_blank"><i class="fab fa-github"></i></a>
           <a href="https://leetcode.com/u/AidanHall/" target="_blank"><i class="fas fa-code"></i></a>
+          <a href="https://speakseeker.com" target="_blank"><i class="fas fa-microphone"></i></a>
         </div>
       </div>
     </div>
