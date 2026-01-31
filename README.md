@@ -127,14 +127,4 @@ Update CSS custom properties in `:root`:
 - **CSS Transforms**: Hardware-accelerated animations
 - **Minified Dependencies**: Optimized external libraries
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Feel free to submit issues and enhancement requests!
-
 ---
-
-**Built with ❤️ by Aidan Hall**
