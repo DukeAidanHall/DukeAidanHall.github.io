@@ -51,33 +51,12 @@ DukeAidanHall.github.io/
 - **Primary Accent**: Cyan blue (#00d4ff)
 - **Secondary Accent**: Hot pink (#ff006e)
 - **Tertiary Accent**: Purple (#7b2cbf)
-
-### Typography
-- **Headings**: Inter (Sans-serif)
-- **Code**: JetBrains Mono (Monospace)
-- **Body**: Inter (Sans-serif)
-
+- 
 ### Layout
 - **Grid System**: CSS Grid for responsive layouts
 - **Flexbox**: Flexible component layouts
 - **Timeline**: Custom timeline design for experience/education
 - **Cards**: Hover-animated project and award cards
-
-## 🚀 Getting Started
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/DukeAidanHall/DukeAidanHall.github.io.git
-   ```
-
-2. **Open in browser**:
-   - Simply open `index.html` in any modern web browser
-   - Or serve locally using a local server
-
-3. **Customize**:
-   - Update content in `index.html`
-   - Modify styles in `animations.css`
-   - Adjust animations in `animations.js`
 
 ## 📱 Responsive Breakpoints
 
@@ -96,29 +75,6 @@ DukeAidanHall.github.io/
 6. **Skills**: Technical skills with proficiency levels
 7. **Awards**: Recognition and achievements
 8. **Contact**: Contact information and form
-
-## 🔧 Customization
-
-### Adding New Sections
-1. Add HTML structure in `index.html`
-2. Add corresponding CSS in `animations.css`
-3. Add navigation link if needed
-4. Update JavaScript for animations if required
-
-### Modifying Colors
-Update CSS custom properties in `:root`:
-```css
-:root {
-  --accent-primary: #your-color;
-  --accent-secondary: #your-color;
-  --bg-primary: #your-color;
-}
-```
-
-### Adding Animations
-1. Define keyframes in CSS
-2. Apply to elements using classes
-3. Trigger with JavaScript intersection observer
 
 ## 🌟 Performance Optimizations
 
