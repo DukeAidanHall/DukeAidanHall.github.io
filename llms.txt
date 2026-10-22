@@ -30,6 +30,25 @@
 - SpeakSeeker: co-founder of a speaker and event marketplace (Next.js, Supabase, Stripe, OpenAI).
 - Pipelined CPU on an FPGA (Verilog), conference recommender (PyTorch), index calculus solver (Python), C(n,k)ombiEval7 poker evaluator (Flutter), CATGETMOUSE interpreter (Java).
 
+## Education
+
+- Duke University, Trinity College (2023 to 2027, senior). B.S. Computer Science, B.S. Mathematics, Digital Intelligence Certificate. GPA 3.9, Dean's List with Distinction (2x, top 10%). Outstanding UTA Award (Duke CS, 2025).
+- Coursework: Applied Machine Learning, Algorithm Design and Analysis, Data Structures and Algorithms, Computer Architecture, Digital Systems, Mathematical Foundations of CS, Mathematical Cryptography, Advanced Probability, Real Analysis, Linear Algebra, Advanced Multivariable Calculus, Discrete Math, Mathematical Finance. Now taking Algorithmic Game Theory, Abstract Algebra and Mathematical Logic.
+- York Community High School, Elmhurst IL (2019 to 2023). 4.93 weighted, 4.0 unweighted, SAT 1560, AP Scholar with Distinction, Illinois State Scholar.
+
+## Certifications
+
+- Microsoft Certified: Azure AI Fundamentals (Jul 2026, credential ID D255083F1AFE8EC1)
+- Microsoft Power Up Program (Jul 2026)
+
+## Honors
+
+- 2nd place, HackDuke 2026. Live Más Scholar 4x (1 of 300 from 10,000+ applicants, $20,000). Taco Bell Foundation Founding Student Advisory Board. Hometown Pride Scholarship finalist (27 of 1,789). Morehead-Cain semifinalist. Del Meítz–Thomas Nelson Award (1 of 670). ICTM regional and state math awards. UIC Mathematics Young Scholar.
+
+## Recommendation
+
+- Fred Zhu, Digital Platform Architect at Dexter Group, who managed Aidan directly: "During this time, he smashed our expectations out of the water." "Any team would be lucky to have Aidan."
+
 ## Skills
 
 Python, TypeScript, JavaScript, Swift, Java, C, C#, SQL, Dart, Verilog. MCP servers, agentic workflows, LLM red teaming, PyTorch. Azure, Cloudflare Workers, Supabase, GitHub Actions, Docker. SwiftUI, HealthKit, React, Next.js, Flutter.

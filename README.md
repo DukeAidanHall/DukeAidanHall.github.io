@@ -15,14 +15,20 @@ Hand-written HTML, CSS and JavaScript. No framework, no build step, no dependenc
 
 ## Features
 
-- Command palette (`⌘K` / `Ctrl K` or `/`) with fuzzy search over sections, projects, roles and links. Doubles as the mobile menu.
+Ideas borrowed from the most-starred personal sites on GitHub, rebuilt by hand:
+
+- Sticky identity column with an active-section nav whose lines grow, and rows that dim their siblings on hover with a whole-row link (Brittany Chiang, bchiang7/v4).
+- A cursor glow across the page plus a dot grid that lights up under the pointer.
+- Short and long bio toggle (Lee Robinson).
+- Logo chips inline in the bio (Anthony Fu).
+- Role line with a text scramble effect (Hamish Williams).
+- Number keys `1` to `6` jump between sections (Onur Şuyalçınkaya), plus a command palette on `⌘K` / `Ctrl K` or `/` with fuzzy search over sections, projects, roles and links. The palette doubles as the mobile menu.
 - Live status card: Marrow's App Store version and the `marrow-mcp` PyPI release are fetched from the public iTunes and PyPI APIs on load, cached for 20 minutes, with static fallbacks.
-- Marrow architecture diagram: HTML boxes, with SVG wires measured and drawn at runtime and animated with the Web Animations API. Hover or focus a box to trace its connections.
-- Hero dot field on a canvas: batched draw calls, paused when off screen or in a background tab.
-- Light and dark themes that follow the system, with a manual toggle (`t`) that reveals through a View Transition.
+- Marrow architecture diagram: HTML boxes with SVG wires measured and drawn at runtime and animated with the Web Animations API. Hover or focus a box to trace its connections.
+- Light and dark themes that follow the system, with a toggle (`t`) that reveals through a View Transition.
 - Project filters animated with View Transitions.
 - Contact form through EmailJS, loaded only when the form is first used, with a honeypot field.
-- Respects `prefers-reduced-motion`. Content is fully visible without JavaScript.
+- Respects `prefers-reduced-motion`. Content is fully readable without JavaScript, and the page prints cleanly.
 
 ## Editing
 

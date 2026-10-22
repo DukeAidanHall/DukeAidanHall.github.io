@@ -49,8 +49,14 @@
     "name": "Aidan Hall",
     "url": "https://dukeaidanhall.github.io/",
     "jobTitle": "Software and AI Engineer",
-    "description": "Duke Computer Science and Mathematics student (May 2027) who builds AI systems and ships software. Creator of Marrow Health.",
+    "description": "Duke Computer Science and Mathematics senior (May 2027) who builds AI systems and ships software. Creator of Marrow Health.",
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "Duke University", "url": "https://duke.edu" },
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Microsoft Certified: Azure AI Fundamentals",
+      "recognizedBy": { "@type": "Organization", "name": "Microsoft" }
+    },
+    "award": ["HackDuke 2026, 2nd place", "Duke CS Outstanding UTA Award", "Taco Bell Foundation Live Más Scholar (4x)"],
     "sameAs": [
       "https://www.linkedin.com/in/hallaidan",
       "https://github.com/DukeAidanHall"
@@ -79,62 +85,117 @@
       <symbol id="i-file" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M14 3.5H7.5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V8z"/><path d="M14 3.5V8h4.5"/></g></symbol>
       <symbol id="i-link" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 13.5a4.5 4.5 0 0 0 6.4.4l2.6-2.6a4.5 4.5 0 0 0-6.4-6.4l-1.4 1.4"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4-.4L5 12.7a4.5 4.5 0 0 0 6.4 6.4l1.4-1.4"/></g></symbol>
       <symbol id="i-box" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 12h6"/></g></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H4.5v1.5A3 3 0 0 0 7.5 10.5M17 6h2.5v1.5a3 3 0 0 1-3 3M12 14v3.5M8.5 20.5h7M9.5 17.5h5"/></g></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3.5 13.9 9l5.6 1.9-5.6 1.9L12 18.5l-1.9-5.7L4.5 10.9 10.1 9z"/></symbol>
     </defs>
   </svg>
 
+  <div class="fx" aria-hidden="true"><div class="fx__glow"></div><div class="fx__dots"></div></div>
+
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="nav" id="nav">
-    <div class="wrap nav__inner">
-      <a class="brand" href="#top" aria-label="Aidan Hall, back to top">
-        <span class="brand__mark" aria-hidden="true">AH</span>
-        <span class="brand__name">Aidan Hall</span>
-      </a>
-      <nav class="nav__links" aria-label="Sections">
-        <a href="#marrow">Marrow</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="nav__tools">
-        <button class="kbd-btn" type="button" data-cmdk-open aria-label="Open command menu" aria-haspopup="dialog">
-          <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>
-          <span class="kbd-btn__label">Search</span>
-          <kbd class="kbd-btn__kbd" data-mod-key>Ctrl K</kbd>
-        </button>
-        <button class="icon-btn" type="button" id="theme-toggle" aria-label="Switch color theme">
-          <svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
-          <svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
-        </button>
-        <button class="icon-btn nav__menu" type="button" data-cmdk-open aria-label="Open menu" aria-haspopup="dialog">
-          <svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg>
-        </button>
-      </div>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#top" aria-label="Aidan Hall, back to top">
+      <span class="brand__mark" aria-hidden="true">AH</span>
+      <span class="brand__name">Aidan Hall</span>
+    </a>
+    <div class="topbar__tools">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch color theme">
+        <svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn" type="button" data-cmdk-open aria-label="Open menu" aria-haspopup="dialog">
+        <svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <canvas class="hero__field" aria-hidden="true"></canvas>
-      <div class="wrap hero__grid">
-        <div class="hero__copy">
-          <p class="pill reveal"><span class="dot dot--live" aria-hidden="true"></span>Open to 2027 new-grad roles in SWE and AI</p>
-          <h1 class="hero__title reveal" id="hero-title">Aidan Hall</h1>
-          <p class="hero__tagline reveal">I build AI systems and ship software <span class="hl">people actually use.</span></p>
-          <p class="hero__lede reveal">CS + Math at Duke, graduating May 2027. I built and run <a href="#marrow">Marrow Health</a>, an iOS app that passed 4,000 users in its first seven weeks. Before that: agentic AI tooling at MetLife, cloud automation at Dexter Axle, and ML research for Duke's ALIGN grid initiative.</p>
-          <div class="hero__cta reveal">
-            <a class="btn btn--primary" href="Aidan_Hall_Resume.pdf" target="_blank" rel="noopener">
-              Resume
-              <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>
-            </a>
-            <a class="btn" href="#marrow">See what I'm building</a>
-            <span class="hero__social">
-              <a class="icon-link" href="https://github.com/DukeAidanHall" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg></a>
-              <a class="icon-link" href="https://www.linkedin.com/in/hallaidan" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
-            </span>
+  <div class="layout">
+    <aside class="side" id="top">
+      <div class="side__main">
+        <p class="pill reveal"><span class="dot dot--live" aria-hidden="true"></span>Open to 2027 new-grad roles</p>
+        <h1 class="side__name reveal"><a href="#top">Aidan Hall</a></h1>
+        <p class="side__role reveal">
+          <span class="sr-only">Software engineer, AI engineer and iOS developer.</span>
+          <span class="mono" aria-hidden="true"><span class="side__prompt">&gt;</span> <span data-scramble="Software engineer|AI engineer|iOS developer|Systems builder">Software engineer</span><span class="caret"></span></span>
+        </p>
+        <p class="side__tag reveal">I build AI systems and ship software people actually use. CS + Math at Duke, graduating May 2027.</p>
+        <div class="side__cta reveal">
+          <a class="btn btn--primary" href="Aidan_Hall_Resume.pdf" target="_blank" rel="noopener">Resume<svg class="ico" aria-hidden="true"><use href="#i-download"/></svg></a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+
+        <nav class="side__nav reveal" aria-label="Sections">
+          <a href="#about" data-key="1"><span class="side__line"></span><span class="side__label">About</span><kbd>1</kbd></a>
+          <a href="#marrow" data-key="2"><span class="side__line"></span><span class="side__label">Marrow</span><kbd>2</kbd></a>
+          <a href="#experience" data-key="3"><span class="side__line"></span><span class="side__label">Experience</span><kbd>3</kbd></a>
+          <a href="#projects" data-key="4"><span class="side__line"></span><span class="side__label">Projects</span><kbd>4</kbd></a>
+          <a href="#education" data-key="5"><span class="side__line"></span><span class="side__label">Education</span><kbd>5</kbd></a>
+          <a href="#contact" data-key="6"><span class="side__line"></span><span class="side__label">Contact</span><kbd>6</kbd></a>
+        </nav>
+      </div>
+
+      <div class="side__foot reveal">
+        <a class="icon-link" href="https://github.com/DukeAidanHall" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg></a>
+        <a class="icon-link" href="https://www.linkedin.com/in/hallaidan" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+        <span class="side__spacer"></span>
+        <button class="kbd-btn" type="button" data-cmdk-open aria-label="Open command menu" aria-haspopup="dialog">
+          <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><span>Search</span><kbd data-mod-key>Ctrl K</kbd>
+        </button>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch color theme">
+          <svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+      </div>
+    </aside>
+
+    <main class="content" id="main">
+
+      <!-- About -->
+      <section class="sec" id="about" aria-labelledby="about-title">
+        <h2 class="kicker" id="about-title"><span>01</span>About</h2>
+
+        <div class="bio reveal">
+          <div class="bio__tabs" role="tablist" aria-label="Bio length">
+            <button type="button" role="tab" id="bio-tab-short" aria-controls="bio-short" aria-selected="true">Short</button>
+            <button type="button" role="tab" id="bio-tab-long" aria-controls="bio-long" aria-selected="false" tabindex="-1">Long</button>
+          </div>
+          <div class="bio__panel" id="bio-short" role="tabpanel" aria-labelledby="bio-tab-short">
+            <p>I'm a CS + Math senior at Duke who builds AI systems and ships products. I made <a href="#marrow">Marrow Health</a>, an iOS app that reached <b>4,000+ users in seven weeks</b>, and spent the summer building agentic developer tooling at <b>MetLife</b>. I'm looking for new-grad software and AI engineering roles starting in 2027.</p>
+          </div>
+          <div class="bio__panel" id="bio-long" role="tabpanel" aria-labelledby="bio-tab-long" data-hidden>
+            <p>I like problems where math, infrastructure and product meet. Most of what I build starts as something slow, manual or fragile and ends as something reliable that people use every day: an email forward that replaced a planner's upload routine, an agent that turns a ticket into a pull request, an app that hands people their own health data.</p>
+            <p>This year I shipped <a href="#marrow">Marrow Health</a> solo, from the SwiftUI screens to an OAuth 2.1 relay that lets ChatGPT, Claude and Gemini read Apple Health data. Before that I built agentic tooling and LLM red-team environments at <b>MetLife</b>, rebuilt Azure integrations at <b>Dexter Axle</b>, and modeled PJM wind generation for Duke's <b>ALIGN</b> initiative.</p>
+            <p>Teaching keeps my fundamentals sharp. I have TA'd four Duke courses in discrete math, probability and multivariable calculus, and won the CS department's Outstanding UTA Award. Before Duke I competed in math leagues across Illinois.</p>
+            <p>I also love games. I took Duke's FOCUS cluster on virtual worlds and games, studied game design and now algorithmic game theory, and my Live Más scholarships were awarded for game design and applied math.</p>
           </div>
         </div>
+
+        <dl class="lchips reveal">
+          <div>
+            <dt>Building</dt>
+            <dd>
+              <a class="lchip" href="#marrow"><img src="assets/img/marrow/icon.webp" width="18" height="18" alt="">Marrow Health</a>
+              <a class="lchip" href="https://pypi.org/project/marrow-mcp/" target="_blank" rel="noopener"><span class="lchip__glyph"><svg class="ico" aria-hidden="true"><use href="#i-terminal"/></svg></span>marrow-mcp</a>
+            </dd>
+          </div>
+          <div>
+            <dt>Interning at</dt>
+            <dd><a class="lchip" href="https://tacobellfoundation.org/" target="_blank" rel="noopener"><img src="assets/img/logos/tbf.webp" width="18" height="18" alt="">Taco Bell Foundation</a></dd>
+          </div>
+          <div>
+            <dt>Previously</dt>
+            <dd>
+              <a class="lchip" href="#xp-metlife"><img src="assets/img/logos/metlife.webp" width="18" height="18" alt="">MetLife</a>
+              <a class="lchip" href="#xp-dexter"><img src="assets/img/logos/dexter.webp" width="18" height="18" alt="">Dexter Axle</a>
+              <a class="lchip" href="#xp-align"><img src="assets/img/logos/duke.webp" width="18" height="18" alt="">Duke ALIGN research</a>
+            </dd>
+          </div>
+          <div>
+            <dt>Studying</dt>
+            <dd><a class="lchip" href="#education"><img src="assets/img/logos/duke.webp" width="18" height="18" alt="">Duke University</a><span class="lchip lchip--plain">CS + Math</span></dd>
+          </div>
+        </dl>
 
         <aside class="status card spot reveal" aria-label="What I'm shipping right now">
           <div class="status__head">
@@ -153,49 +214,39 @@
               <div class="status__meta"><b class="mono" data-live="py-version">v0.4.1</b><span data-live="py-date">Oct 22</span></div>
             </li>
             <li>
-              <span class="status__icon" aria-hidden="true"><svg class="ico"><use href="#i-brief"/></svg></span>
-              <div class="status__main"><b>UI/UX Intern</b><span>Taco Bell Foundation</span></div>
-              <div class="status__meta"><b class="mono">now</b><span>since Sep</span></div>
-            </li>
-            <li>
               <span class="status__icon" aria-hidden="true"><svg class="ico"><use href="#i-cap"/></svg></span>
-              <div class="status__main"><b>B.S. CS + Math</b><span>Duke University</span></div>
-              <div class="status__meta"><b class="mono">3.9</b><span>May 2027</span></div>
+              <div class="status__main"><b>Taking this fall</b><span>Algorithmic Game Theory, Abstract Algebra, Logic</span></div>
+              <div class="status__meta"><b class="mono">senior</b><span>Duke</span></div>
             </li>
           </ul>
           <p class="status__foot mono" data-live="foot">versions read live from App Store and PyPI</p>
         </aside>
-      </div>
 
-      <div class="wrap">
         <dl class="metrics reveal">
           <div><dt>Marrow users in its first 7 weeks</dt><dd data-count>4,000+</dd></div>
           <div><dt>Less dev time with my MetLife agent platform</dt><dd data-count><small>up to</small> 96%</dd></div>
           <div><dt>Hours saved a year by one Dexter automation</dt><dd data-count>2,860</dd></div>
           <div><dt>Wind model correlation with real output</dt><dd data-count>99.1%</dd></div>
-          <div><dt>GPA across CS and Math at Duke</dt><dd data-count>3.9</dd></div>
         </dl>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="marrow" aria-labelledby="marrow-title">
-      <div class="wrap">
-        <header class="section__head reveal">
-          <p class="kicker"><span>01</span>Featured build</p>
-          <div class="product">
-            <img class="product__icon" src="assets/img/marrow/icon.webp" width="72" height="72" alt="Marrow Health app icon">
-            <div>
-              <h2 id="marrow-title">Marrow Health</h2>
-              <p class="section__sub">A calorie counter and Apple Health hub that hands your data to your AI. Designed, built, shipped and supported solo.</p>
-            </div>
-          </div>
-          <div class="link-row">
-            <a class="btn btn--sm btn--primary" href="https://apps.apple.com/us/app/marrow-health-calorie-counter/id6800819435" target="_blank" rel="noopener">App Store<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn--sm" href="https://marrowhealthapp.com/" target="_blank" rel="noopener">marrowhealthapp.com<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn--sm" href="https://github.com/skeletonarmytech/marrow-mcp" target="_blank" rel="noopener">MCP server source<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn--sm" href="https://pypi.org/project/marrow-mcp/" target="_blank" rel="noopener">PyPI<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <!-- Marrow -->
+      <section class="sec" id="marrow" aria-labelledby="marrow-title">
+        <h2 class="kicker" id="marrow-title"><span>02</span>Featured build</h2>
+
+        <header class="product reveal">
+          <img class="product__icon" src="assets/img/marrow/icon.webp" width="64" height="64" alt="Marrow Health app icon">
+          <div>
+            <h3 class="product__name">Marrow Health</h3>
+            <p class="product__sub">A calorie counter and Apple Health hub that hands your data to your AI. Designed, built, shipped and supported solo.</p>
           </div>
         </header>
+        <div class="link-row reveal">
+          <a class="btn btn--sm btn--primary" href="https://apps.apple.com/us/app/marrow-health-calorie-counter/id6800819435" target="_blank" rel="noopener">App Store<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--sm" href="https://marrowhealthapp.com/" target="_blank" rel="noopener">Website<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--sm" href="https://github.com/skeletonarmytech/marrow-mcp" target="_blank" rel="noopener">MCP server<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--sm" href="https://pypi.org/project/marrow-mcp/" target="_blank" rel="noopener">PyPI<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
 
         <div class="gallery reveal">
           <div class="gallery__track" tabindex="0" role="region" aria-label="Marrow Health screenshots, scroll sideways">
@@ -213,48 +264,46 @@
           </div>
         </div>
 
-        <div class="split">
-          <dl class="specs card reveal">
-            <div><dt>Role</dt><dd>Solo: product, design, iOS, backend, release, support</dd></div>
-            <div><dt>Shipped</dt><dd>Sep 2026, now on <span class="mono" data-live="app-version">v1.4.1</span></dd></div>
-            <div><dt>Reach</dt><dd>4,000+ users in 7 weeks, 30 languages</dd></div>
-            <div><dt>Surfaces</dt><dd>iPhone, Apple Watch, Home Screen widgets</dd></div>
-            <div><dt>Stack</dt><dd>Swift, SwiftUI, HealthKit, StoreKit 2, Python, SQLite, Cloudflare Workers</dd></div>
-            <div><dt>Scale</dt><dd>~49k lines of Swift, 1,590-assertion test suite</dd></div>
-          </dl>
+        <dl class="specs card reveal">
+          <div><dt>Role</dt><dd>Solo: product, design, iOS, backend, release, support</dd></div>
+          <div><dt>Shipped</dt><dd>Sep 2026, now on <span class="mono" data-live="app-version">v1.4.1</span></dd></div>
+          <div><dt>Reach</dt><dd>4,000+ users in 7 weeks, 30 languages</dd></div>
+          <div><dt>Surfaces</dt><dd>iPhone, Apple Watch, Home Screen widgets</dd></div>
+          <div><dt>Stack</dt><dd>Swift, SwiftUI, HealthKit, StoreKit 2, Python, SQLite, Cloudflare Workers</dd></div>
+          <div><dt>Scale</dt><dd>~49k lines of Swift, 1,590-assertion test suite</dd></div>
+        </dl>
 
-          <ol class="highlights">
-            <li class="reveal">
-              <h3>Correct by construction</h3>
-              <p>Anchored HealthKit queries keyed by sample UUID make duplicate rows and missed changes structurally impossible, and deletions flow downstream.</p>
-            </li>
-            <li class="reveal">
-              <h3>Built for AI agents</h3>
-              <p>An open source MCP server and a hosted OAuth 2.1 relay let ChatGPT, Claude and Gemini query 115+ Apple Health data types. Every connection is approved on the phone.</p>
-            </li>
-            <li class="reveal">
-              <h3>Shipping without a Mac</h3>
-              <p>GitHub Actions macOS runners test, sign and upload every build with fastlane and the App Store Connect API, gated by the full test suite.</p>
-            </li>
-            <li class="reveal">
-              <h3>Run like a product</h3>
-              <p>Listed in the official MCP Registry, a one-click Claude Desktop extension, subscriptions through StoreKit, and live dining menus for 46 universities.</p>
-            </li>
-          </ol>
-        </div>
+        <ol class="highlights">
+          <li class="reveal">
+            <h4>Correct by construction</h4>
+            <p>Anchored HealthKit queries keyed by sample UUID make duplicate rows and missed changes structurally impossible, and deletions flow downstream.</p>
+          </li>
+          <li class="reveal">
+            <h4>Built for AI agents</h4>
+            <p>An open source MCP server and a hosted OAuth 2.1 relay let ChatGPT, Claude and Gemini query 115+ Apple Health data types. Every connection is approved on the phone.</p>
+          </li>
+          <li class="reveal">
+            <h4>Shipping without a Mac</h4>
+            <p>GitHub Actions macOS runners test, sign and upload every build with fastlane and the App Store Connect API, gated by the full test suite.</p>
+          </li>
+          <li class="reveal">
+            <h4>Run like a product</h4>
+            <p>Listed in the official MCP Registry, a one-click Claude Desktop extension, subscriptions through StoreKit, and live dining menus for 46 universities.</p>
+          </li>
+        </ol>
 
         <figure class="arch card reveal">
           <figcaption class="arch__cap">
             <span class="mono">architecture.svg</span>
-            <span class="arch__hint">How data moves through Marrow. Hover a box to trace it.</span>
+            <span class="arch__hint">Hover a box to trace it</span>
           </figcaption>
           <div class="arch__grid" id="arch">
             <svg class="arch__wires" aria-hidden="true"></svg>
             <div class="arch__col">
               <p class="arch__label">Devices</p>
               <div class="node" data-node="phone" tabindex="0"><b>iPhone app</b><span>SwiftUI · HealthKit · StoreKit 2</span></div>
-              <div class="node" data-node="watch" tabindex="0"><b>Apple Watch</b><span>watchOS app · complications</span></div>
-              <div class="node" data-node="widgets" tabindex="0"><b>Widgets</b><span>WidgetKit · shared keychain</span></div>
+              <div class="node" data-node="watch" tabindex="0"><b>Apple Watch</b><span>watchOS · complications</span></div>
+              <div class="node" data-node="widgets" tabindex="0"><b>Widgets</b><span>WidgetKit</span></div>
             </div>
             <div class="arch__col arch__col--core">
               <p class="arch__label">Core, on device</p>
@@ -262,14 +311,10 @@
             </div>
             <div class="arch__col">
               <p class="arch__label">Services</p>
-              <div class="node" data-node="mcp" tabindex="0"><b>marrow-mcp</b><span>self-hosted · Python stdlib · SQLite</span></div>
-              <div class="node" data-node="connect" tabindex="0"><b>Marrow Connect</b><span>OAuth 2.1 relay · APNs write-back</span></div>
-              <div class="node" data-node="vision" tabindex="0"><b>Vision gateway</b><span>Cloudflare Worker · Gemini</span></div>
-              <div class="node" data-node="menus" tabindex="0"><b>Campus menus API</b><span>14 adapters · 46 schools</span></div>
-            </div>
-            <div class="arch__col arch__col--end">
-              <p class="arch__label">Clients</p>
-              <div class="node node--ghost" data-node="agents" tabindex="0"><b>AI agents</b><span>Claude · ChatGPT · Gemini · Cursor</span></div>
+              <div class="node" data-node="mcp" tabindex="0"><b>marrow-mcp</b><span>self-hosted · SQLite</span><span class="node__to">→ Claude Code, Cursor</span></div>
+              <div class="node" data-node="connect" tabindex="0"><b>Marrow Connect</b><span>OAuth 2.1 relay · APNs</span><span class="node__to">→ ChatGPT, Claude, Gemini</span></div>
+              <div class="node" data-node="vision" tabindex="0"><b>Vision gateway</b><span>CF Worker · Gemini</span></div>
+              <div class="node" data-node="menus" tabindex="0"><b>Campus menus</b><span>14 adapters · 46 schools</span></div>
             </div>
           </div>
           <ol class="pipeline" aria-label="Release pipeline">
@@ -282,21 +327,18 @@
             <li>App Store</li>
           </ol>
         </figure>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="experience" aria-labelledby="xp-title">
-      <div class="wrap">
-        <header class="section__head reveal">
-          <p class="kicker"><span>02</span>Experience</p>
-          <h2 id="xp-title">Where I've worked</h2>
-        </header>
+      <!-- Experience -->
+      <section class="sec" id="experience" aria-labelledby="xp-title">
+        <h2 class="kicker" id="xp-title"><span>03</span>Experience</h2>
 
-        <ol class="xp">
-          <li class="xp__item reveal" data-cmdk="Taco Bell Foundation, UI/UX Intern" data-cmdk-group="Experience">
-            <div class="xp__when"><span>Sep 2026 – now</span><span>Remote</span></div>
-            <div class="xp__body">
-              <h3 class="xp__role">UI/UX Intern <span class="xp__org">Taco Bell Foundation</span></h3>
+        <ol class="rows" data-dim>
+          <li class="row reveal" id="xp-tbf" data-cmdk="Taco Bell Foundation, UI/UX Intern" data-cmdk-group="Experience">
+            <p class="row__when mono">Sep 2026 – Now</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://tacobellfoundation.org/" target="_blank" rel="noopener">UI/UX Intern · Taco Bell Foundation<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3>
+              <p class="row__meta">Remote</p>
               <ul>
                 <li>Improving UX and educational resources that help college students graduate debt-free.</li>
                 <li>Selected from a large applicant pool for the platform's <strong>Founding Student Advisory Board</strong>.</li>
@@ -305,23 +347,25 @@
             </div>
           </li>
 
-          <li class="xp__item reveal" data-cmdk="MetLife, AI and DevOps Intern" data-cmdk-group="Experience">
-            <div class="xp__when"><span>Jun – Aug 2026</span><span>Cary, NC</span></div>
-            <div class="xp__body">
-              <h3 class="xp__role">AI & DevOps Intern <span class="xp__org">MetLife</span></h3>
+          <li class="row reveal" id="xp-metlife" data-cmdk="MetLife, AI and DevOps Intern" data-cmdk-group="Experience">
+            <p class="row__when mono">Jun – Aug 2026</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://www.metlife.com/" target="_blank" rel="noopener">AI & DevOps Intern · MetLife<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3>
+              <p class="row__meta">Cary, NC</p>
               <ul>
                 <li>Engineered an agentic development platform that turns Azure DevOps requirements into production-ready GitHub pull requests, using MCP tooling and self-expanding knowledge repositories. Cut development time by <strong>up to 96%</strong>.</li>
                 <li>Designed AI red-team environments for prompt injection and data leakage, giving internal LLM deployments <strong>repeatable security validation</strong>.</li>
-                <li>Built document analysis systems for large-scale PDF and text comparison across migration, compliance and validation work. Earned Microsoft Azure AI Fundamentals (AI-901).</li>
+                <li>Built document analysis systems for large-scale PDF and text comparison across migration, compliance and validation work.</li>
               </ul>
               <p class="tags"><span>Agentic AI</span><span>MCP</span><span>Azure DevOps</span><span>GitHub</span><span>LLM security</span><span>Azure AI</span></p>
             </div>
           </li>
 
-          <li class="xp__item reveal" data-cmdk="Dexter Axle, Software Engineer Intern" data-cmdk-group="Experience">
-            <div class="xp__when"><span>May – Aug 2025</span><span>Lisle, IL</span></div>
-            <div class="xp__body">
-              <h3 class="xp__role">Software Engineer Intern <span class="xp__org">Dexter Axle Company</span></h3>
+          <li class="row reveal" id="xp-dexter" data-cmdk="Dexter Axle, Software Engineer Intern" data-cmdk-group="Experience">
+            <p class="row__when mono">May – Aug 2025</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://www.dextergroup.com/" target="_blank" rel="noopener">Software Engineer Intern · Dexter Axle<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3>
+              <p class="row__meta">Lisle, IL</p>
               <ul>
                 <li>Built a PO-attachment automation on Azure Functions and Dynamics 365 APIs. A 1-minute manual upload became a 5-second email forward, used daily by 11 planners and saving <strong>~2,860 hours and $160K–190K a year</strong>.</li>
                 <li>Re-architected two parcel-charge and tracking pipelines from legacy C# and SQL jobs into Azure Logic Apps and modular SQL Server views. Fan-out/merge and multi-level parallelism cut latency <strong>80%</strong>, removed all data duplication and restored SLA-grade alerts.</li>
@@ -330,10 +374,11 @@
             </div>
           </li>
 
-          <li class="xp__item reveal" data-cmdk="Duke ALIGN, ML Research Assistant" data-cmdk-group="Experience">
-            <div class="xp__when"><span>Sep 2025 – May 2026</span><span>Durham, NC</span></div>
-            <div class="xp__body">
-              <h3 class="xp__role">Machine Learning Research Assistant <span class="xp__org">Duke University, Patiño-Echeverri Lab</span></h3>
+          <li class="row reveal" id="xp-align" data-cmdk="Duke ALIGN, ML Research Assistant" data-cmdk-group="Experience">
+            <p class="row__when mono">Sep 2025 – May 2026</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://nicholas.duke.edu/people/faculty/patino-echeverri" target="_blank" rel="noopener">ML Research Assistant · Duke Patiño-Echeverri Lab<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3>
+              <p class="row__meta">Durham, NC · Gorter Scholar</p>
               <ul>
                 <li>Research within Duke's $2.9M ALIGN Initiative, a national collaboration with Google, the Georgetown Climate Center and former FERC Commissioner Allison Clements on renewable integration and grid modernization.</li>
                 <li>Built a calibrated wind generation model for PJM wind farms from NREL SAM, NASA POWER and EIA turbine data, reaching <strong>99.1% correlation</strong> with actual 2023 generation. Wrote it up in a research paper.</li>
@@ -342,13 +387,14 @@
             </div>
           </li>
 
-          <li class="xp__item reveal" data-cmdk="Duke, Teaching Assistant" data-cmdk-group="Experience">
-            <div class="xp__when"><span>Jan – Dec 2025</span><span>Durham, NC</span></div>
-            <div class="xp__body">
-              <h3 class="xp__role">Teaching Assistant <span class="xp__org">Duke CS and Math, 4 courses</span></h3>
+          <li class="row reveal" id="xp-ta" data-cmdk="Duke, Teaching Assistant" data-cmdk-group="Experience">
+            <p class="row__when mono">Jan – Dec 2025</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://cs.duke.edu/" target="_blank" rel="noopener">Teaching Assistant · Duke CS and Math<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3>
+              <p class="row__meta">Durham, NC · 4 courses</p>
               <ul>
                 <li>Led recitations and office hours for COMPSCI 230, COMPSCI 231, MATH 222 and MATH 230, supporting <strong>150+ students</strong> each semester, and graded advanced proofs.</li>
-                <li>Won the Duke 2025 <strong>Outstanding TA Award</strong> for teaching discrete math.</li>
+                <li>Won the CS department's <strong>Outstanding UTA Award</strong> (2025) for teaching discrete math, one of a few chosen from all undergraduate TAs.</li>
               </ul>
               <p class="tags"><span>Discrete math</span><span>Probability</span><span>Teaching</span></p>
             </div>
@@ -364,146 +410,179 @@
             <li><b>Lead Software and Game Engineer</b>, Elmhurst District 205 <span class="mono">Jan 2021 – May 2022</span><p>Led two game-based fundraisers that raised $20K+ for local schools.</p></li>
           </ul>
         </details>
-      </div>
-    </section>
 
-    <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="wrap">
-        <header class="section__head section__head--row reveal">
-          <div>
-            <p class="kicker"><span>03</span>Projects</p>
-            <h2 id="projects-title">More things I've built</h2>
-          </div>
+        <figure class="quote card spot reveal" data-cmdk="Recommendation from Fred Zhu, Dexter" data-cmdk-group="Experience">
+          <svg class="quote__mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M13 8C7.5 9.6 4 14 4 19.5 4 23 6.2 25 9 25c2.6 0 4.5-1.9 4.5-4.4 0-2.4-1.7-4.2-4-4.4.6-2.6 2.6-4.8 5.3-5.9L13 8zm15 0c-5.5 1.6-9 6-9 11.5 0 3.5 2.2 5.5 5 5.5 2.6 0 4.5-1.9 4.5-4.4 0-2.4-1.7-4.2-4-4.4.6-2.6 2.6-4.8 5.3-5.9L28 8z"/></svg>
+          <blockquote cite="https://www.linkedin.com/in/hallaidan">
+            <p class="quote__lead">During this time, he smashed our expectations out of the water.</p>
+            <p>Within 2 weeks, he absorbed the provided learning materials, researched the legacy integration, and was able to begin the refactoring process. By week 4, the upgrade was complete and we were scrambling to find more work for him.</p>
+            <p>Any team would be lucky to have Aidan and I look forward to seeing where the future takes him!</p>
+          </blockquote>
+          <figcaption>
+            <span class="quote__avatar" aria-hidden="true">FZ</span>
+            <span><b>Fred Zhu</b><span>Digital Platform Architect, Dexter Group. Managed Aidan directly.</span></span>
+            <a class="quote__src mono" href="https://www.linkedin.com/in/hallaidan" target="_blank" rel="noopener">LinkedIn<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </figcaption>
+        </figure>
+
+        <p class="more reveal"><a href="Aidan_Hall_Resume.pdf" target="_blank" rel="noopener">View full résumé<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      </section>
+
+      <!-- Projects -->
+      <section class="sec" id="projects" aria-labelledby="projects-title">
+        <div class="sec__bar">
+          <h2 class="kicker" id="projects-title"><span>04</span>Projects</h2>
           <div class="filters" role="group" aria-label="Filter projects">
             <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
             <button type="button" class="chip" data-filter="ai" aria-pressed="false">AI</button>
             <button type="button" class="chip" data-filter="systems" aria-pressed="false">Systems</button>
             <button type="button" class="chip" data-filter="math" aria-pressed="false">Math</button>
           </div>
-        </header>
-
-        <div class="projects">
-          <article class="project card spot reveal" data-tags="ai" data-cmdk="ClassPulse" data-cmdk-group="Projects">
-            <p class="project__kicker"><span class="badge">2nd place</span>HackDuke 2026</p>
-            <h3>ClassPulse</h3>
-            <p>Real-time classroom intelligence. It reads student work on iPads as it happens, flags who is stuck, alerts the teacher through smart glasses, and generates explainer videos while they help someone else.</p>
-            <p class="tags"><span>React</span><span>OpenAI</span><span>Gemini</span><span>Remotion</span><span>ElevenLabs</span></p>
-            <p class="project__links"><a href="https://github.com/sofaradkova/hackduke26stu" target="_blank" rel="noopener">Code<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="https://devpost.com/software/classpulse-tj0s2p" target="_blank" rel="noopener">Devpost<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-          </article>
-
-          <article class="project card spot reveal" data-tags="ai systems" data-cmdk="SpeakSeeker" data-cmdk-group="Projects">
-            <p class="project__kicker">Co-founder · live</p>
-            <h3>SpeakSeeker</h3>
-            <p>A two-sided marketplace that matches speakers with events. Includes a pipeline that crawls public calls for speakers into claimable listings, personalized ranking, and metered AI features.</p>
-            <p class="tags"><span>Next.js</span><span>Supabase</span><span>Stripe</span><span>OpenAI</span></p>
-            <p class="project__links"><a href="https://www.speakseeker.com/" target="_blank" rel="noopener">speakseeker.com<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-          </article>
-
-          <article class="project card spot reveal" data-tags="math" data-cmdk="PJM wind generation model" data-cmdk-group="Projects">
-            <p class="project__kicker">Research · Duke ALIGN</p>
-            <h3>PJM wind generation model</h3>
-            <p>Simulates hourly output for PJM wind farms from NASA POWER weather, EIA turbine specs and NREL SAM, then calibrates against reported generation. 99.1% correlation with actual 2023 output.</p>
-            <p class="tags"><span>Python</span><span>NREL SAM</span><span>NASA POWER</span><span>EIA data</span></p>
-            <p class="project__links"><a href="https://github.com/DukeAidanHall/PJMGenSimulation" target="_blank" rel="noopener">Code<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-          </article>
-
-          <article class="project card spot reveal" data-tags="systems" data-cmdk="Pipelined CPU on an FPGA" data-cmdk-group="Projects">
-            <p class="project__kicker">Digital Systems</p>
-            <h3>Pipelined CPU on an FPGA</h3>
-            <p>A 5-stage pipelined processor in Verilog with hazard handling and bypassing, its own ALU, multiplier/divider and register file, driving servo motors through custom PWM peripherals.</p>
-            <p class="tags"><span>Verilog</span><span>FPGA</span><span>MIPS-style ISA</span></p>
-            <p class="project__links"><a href="https://github.com/DukeAidanHall/350finalproject" target="_blank" rel="noopener">Code<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-          </article>
-
-          <article class="project card spot reveal" data-tags="ai" data-cmdk="Conference recommender" data-cmdk-group="Projects">
-            <p class="project__kicker">Applied ML</p>
-            <h3>Conference recommender</h3>
-            <p>Embeds a speaker's profile, compares it with precomputed conference embeddings, and ranks the best matches with a custom PyTorch MLP.</p>
-            <p class="tags"><span>Python</span><span>PyTorch</span><span>Embeddings</span></p>
-            <p class="project__links"><a href="https://github.com/DukeAidanHall/cs372_final" target="_blank" rel="noopener">Code<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-          </article>
-
-          <article class="project card spot reveal" data-tags="math" data-cmdk="Index calculus solver" data-cmdk-group="Projects">
-            <p class="project__kicker">Mathematical Cryptography</p>
-            <h3>Index calculus solver</h3>
-            <p>Computes discrete logarithms with the index calculus method: a smooth factor base, randomized relation collection, and linear algebra mod p − 1 with an adaptive bound.</p>
-            <p class="tags"><span>Python</span><span>SymPy</span><span>Number theory</span></p>
-            <p class="project__links"><a href="https://github.com/DukeAidanHall/indexCalcAlgo" target="_blank" rel="noopener">Code<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-          </article>
-
-          <article class="project card spot reveal" data-tags="math" data-cmdk="C(n,k)ombiEval7 poker evaluator" data-cmdk-group="Projects">
-            <p class="project__kicker">Flutter app</p>
-            <h3>C(n,k)ombiEval7</h3>
-            <p>A seven-card poker odds calculator that replaces giant lookup tables with combinatorics, cutting memory by about 98% so it runs comfortably on a phone.</p>
-            <p class="tags"><span>Dart</span><span>Flutter</span><span>Combinatorics</span></p>
-            <p class="project__links"><a href="https://github.com/DukeAidanHall/C-n-k-ombiEval7" target="_blank" rel="noopener">Code<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-          </article>
-
-          <article class="project card spot reveal" data-tags="systems" data-cmdk="CATGETMOUSE interpreter" data-cmdk-group="Projects">
-            <p class="project__kicker">Compilers</p>
-            <h3>CATGETMOUSE interpreter</h3>
-            <p>Tokenizer, DFA-driven SLR(1) parser, AST builder and simulator for a small language about cats chasing mice.</p>
-            <p class="tags"><span>Java</span><span>SLR(1)</span><span>ASTs</span></p>
-            <p class="project__links"><a href="https://github.com/DukeAidanHall/cat-mouse-interpreter" target="_blank" rel="noopener">Code<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-          </article>
-
-          <article class="project card spot reveal" data-tags="ai" data-cmdk="BeeWise" data-cmdk-group="Projects">
-            <p class="project__kicker">HackDuke 2025</p>
-            <h3>BeeWise</h3>
-            <p>Scrapes news articles, classifies political bias and sentiment with a team of agents, and turns news literacy into a game with leaderboards.</p>
-            <p class="tags"><span>React</span><span>OpenAI Swarm</span><span>Goose3</span><span>AWS S3</span></p>
-            <p class="project__links"><a href="https://github.com/25dlee/BeeWise" target="_blank" rel="noopener">Code<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-          </article>
         </div>
-      </div>
-    </section>
 
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="wrap">
-        <header class="section__head reveal">
-          <p class="kicker"><span>04</span>About</p>
-          <h2 id="about-title">Math, infrastructure and product</h2>
-        </header>
+        <ol class="rows projects" data-dim>
+          <li class="row project reveal" data-tags="ai" data-cmdk="ClassPulse" data-cmdk-group="Projects">
+            <p class="row__when mono">2026</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://devpost.com/software/classpulse-tj0s2p" target="_blank" rel="noopener">ClassPulse<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a><span class="proof"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg>2nd place, HackDuke</span></h3>
+              <p>Real-time classroom intelligence. It reads student work on iPads as it happens, flags who is stuck, alerts the teacher through smart glasses, and generates explainer videos while they help someone else.</p>
+              <p class="tags"><span>React</span><span>OpenAI</span><span>Gemini</span><span>Remotion</span><span>ElevenLabs</span><a class="tag-link" href="https://github.com/sofaradkova/hackduke26stu" target="_blank" rel="noopener">Code<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+            </div>
+          </li>
 
-        <div class="about">
-          <div class="about__text reveal">
-            <p>I like problems where those three meet. Most of what I build starts as something slow, manual or fragile and ends as something reliable that people use every day: an email forward that replaced a planner's upload routine, an agent that turns a ticket into a pull request, an app that hands people their own health data.</p>
-            <p>Teaching keeps my fundamentals sharp. I have TA'd four Duke courses in discrete math, probability and multivariable calculus, and before Duke I competed in math leagues across Illinois.</p>
-            <h3 class="mini-title">Outside of class</h3>
-            <p class="tags tags--plain"><span>Club Rowing</span><span>Weightlifting</span><span>Theta Chi</span><span>Adaptive Explorers</span><span>Hackathons</span><span>Duke FOCUS</span><span>Math Union</span></p>
+          <li class="row project reveal" data-tags="ai systems" data-cmdk="SpeakSeeker" data-cmdk-group="Projects">
+            <p class="row__when mono">2025</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://www.speakseeker.com/" target="_blank" rel="noopener">SpeakSeeker<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a><span class="proof"><svg class="ico" aria-hidden="true"><use href="#i-spark"/></svg>Co-founder, live</span></h3>
+              <p>A two-sided marketplace that matches speakers with events. Includes a pipeline that crawls public calls for speakers into claimable listings, personalized ranking, and metered AI features.</p>
+              <p class="tags"><span>Next.js</span><span>Supabase</span><span>Stripe</span><span>OpenAI</span></p>
+            </div>
+          </li>
+
+          <li class="row project reveal" data-tags="math" data-cmdk="PJM wind generation model" data-cmdk-group="Projects">
+            <p class="row__when mono">2026</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://github.com/DukeAidanHall/PJMGenSimulation" target="_blank" rel="noopener">PJM wind generation model<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a><span class="proof">r = 0.991</span></h3>
+              <p>Simulates hourly output for PJM wind farms from NASA POWER weather, EIA turbine specs and NREL SAM, then calibrates against reported generation. Built for Duke's ALIGN initiative.</p>
+              <p class="tags"><span>Python</span><span>NREL SAM</span><span>NASA POWER</span><span>EIA data</span></p>
+            </div>
+          </li>
+
+          <li class="row project reveal" data-tags="systems" data-cmdk="Pipelined CPU on an FPGA" data-cmdk-group="Projects">
+            <p class="row__when mono">2026</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://github.com/DukeAidanHall/350finalproject" target="_blank" rel="noopener">Pipelined CPU on an FPGA<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a><span class="proof">5-stage pipeline</span></h3>
+              <p>A processor in Verilog with hazard handling and bypassing, its own ALU, multiplier/divider and register file, driving servo motors through custom PWM peripherals.</p>
+              <p class="tags"><span>Verilog</span><span>FPGA</span><span>MIPS-style ISA</span></p>
+            </div>
+          </li>
+
+          <li class="row project reveal" data-tags="ai" data-cmdk="Conference recommender" data-cmdk-group="Projects">
+            <p class="row__when mono">2025</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://github.com/DukeAidanHall/cs372_final" target="_blank" rel="noopener">Conference recommender<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3>
+              <p>Embeds a speaker's profile, compares it with precomputed conference embeddings, and ranks the best matches with a custom PyTorch MLP.</p>
+              <p class="tags"><span>Python</span><span>PyTorch</span><span>Embeddings</span></p>
+            </div>
+          </li>
+
+          <li class="row project reveal" data-tags="math" data-cmdk="Index calculus solver" data-cmdk-group="Projects">
+            <p class="row__when mono">2026</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://github.com/DukeAidanHall/indexCalcAlgo" target="_blank" rel="noopener">Index calculus solver<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3>
+              <p>Computes discrete logarithms with the index calculus method: a smooth factor base, randomized relation collection, and linear algebra mod p − 1 with an adaptive bound.</p>
+              <p class="tags"><span>Python</span><span>SymPy</span><span>Number theory</span></p>
+            </div>
+          </li>
+
+          <li class="row project reveal" data-tags="math" data-cmdk="C(n,k)ombiEval7 poker evaluator" data-cmdk-group="Projects">
+            <p class="row__when mono">2024</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://github.com/DukeAidanHall/C-n-k-ombiEval7" target="_blank" rel="noopener">C(n,k)ombiEval7<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a><span class="proof">~98% less memory</span></h3>
+              <p>A seven-card poker odds calculator that replaces giant lookup tables with combinatorics, so it runs comfortably on a phone.</p>
+              <p class="tags"><span>Dart</span><span>Flutter</span><span>Combinatorics</span></p>
+            </div>
+          </li>
+
+          <li class="row project reveal" data-tags="systems" data-cmdk="CATGETMOUSE interpreter" data-cmdk-group="Projects">
+            <p class="row__when mono">2024</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://github.com/DukeAidanHall/cat-mouse-interpreter" target="_blank" rel="noopener">CATGETMOUSE interpreter<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3>
+              <p>Tokenizer, DFA-driven SLR(1) parser, AST builder and simulator for a small language about cats chasing mice.</p>
+              <p class="tags"><span>Java</span><span>SLR(1)</span><span>ASTs</span></p>
+            </div>
+          </li>
+
+          <li class="row project reveal" data-tags="ai" data-cmdk="BeeWise" data-cmdk-group="Projects">
+            <p class="row__when mono">2025</p>
+            <div class="row__body">
+              <h3 class="row__title"><a class="stretch" href="https://github.com/25dlee/BeeWise" target="_blank" rel="noopener">BeeWise<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a><span class="proof">HackDuke 2025</span></h3>
+              <p>Scrapes news articles, classifies political bias and sentiment with a team of agents, and turns news literacy into a game with leaderboards.</p>
+              <p class="tags"><span>React</span><span>OpenAI Swarm</span><span>Goose3</span><span>AWS S3</span></p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="more reveal"><a href="https://github.com/DukeAidanHall" target="_blank" rel="noopener">Everything on GitHub<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      </section>
+
+      <!-- Education -->
+      <section class="sec" id="education" aria-labelledby="edu-title">
+        <h2 class="kicker" id="edu-title"><span>05</span>Education</h2>
+
+        <article class="edu card reveal">
+          <div class="edu__head">
+            <img class="edu__logo" src="assets/img/logos/duke.webp" width="40" height="40" alt="">
+            <div>
+              <h3>Duke University</h3>
+              <p>B.S. Computer Science · B.S. Mathematics · Digital Intelligence Certificate</p>
+            </div>
+            <p class="mono edu__when">2023 – 2027</p>
           </div>
-
-          <div class="about__side">
-            <article class="edu card reveal">
-              <div class="edu__head">
-                <div>
-                  <h3>Duke University</h3>
-                  <p>B.S. Computer Science · B.S. Mathematics<br>Digital Intelligence Certificate</p>
-                </div>
-                <p class="mono edu__when">2023 – 2027</p>
+          <p class="edu__stats"><span><b>3.9</b> GPA</span><span><b>2x</b> Dean's List with Distinction</span><span><b>Outstanding UTA</b> Award</span></p>
+          <p class="tags tags--plain">
+            <span>Applied Machine Learning</span><span>Algorithm Design and Analysis</span><span>Data Structures and Algorithms</span><span>Computer Architecture</span><span>Digital Systems</span><span>Mathematical Foundations of CS</span><span>Mathematical Cryptography</span><span>Information and the Internet</span><span>Advanced Probability</span><span>Real Analysis</span><span>Linear Algebra</span><span>Advanced Multivariable Calculus</span><span>Discrete Math</span><span>Mathematical Finance</span>
+          </p>
+          <p class="edu__now"><span class="mono">Now taking</span> Algorithmic Game Theory, Abstract Algebra, Mathematical Logic</p>
+          <p class="edu__acts"><span class="mono">Activities</span> Patiño-Echeverri Lab, Gorter Scholar, CS and MVLA TA programs, Duke Programming Arts and Design, HackDuke, Club Rowing, Theta Chi, Adaptive Explorers, Math Union, FOCUS Program</p>
+          <div class="edu__hs">
+            <div class="edu__head">
+              <div>
+                <h4>York Community High School</h4>
+                <p>4.93 weighted, 4.0 unweighted · SAT 1560 · AP Scholar with Distinction · Illinois State Scholar · XC and Track Academic All-Conference</p>
               </div>
-              <p class="edu__stats"><span><b>3.9</b> GPA</span><span><b>2x</b> Dean's List with Distinction</span></p>
-              <p class="tags tags--plain">
-                <span>Applied Machine Learning</span><span>Algorithm Design</span><span>Computer Architecture</span><span>Digital Systems</span><span>Mathematical Cryptography</span><span>Data Structures</span><span>Advanced Probability</span><span>Real Analysis</span><span>Linear Algebra</span><span>Multivariable Calculus</span><span>Discrete Math</span><span>Mathematical Finance</span>
-              </p>
-              <p class="edu__hs">York Community High School, Elmhurst IL · SAT 1560 · AP Scholar with Distinction · NHS</p>
-            </article>
-
-
+              <p class="mono edu__when">2019 – 2023</p>
+            </div>
           </div>
-        </div>
+        </article>
+
+        <article class="certs card reveal">
+          <h3>Certifications</h3>
+          <ul>
+            <li><span><b>Microsoft Certified: Azure AI Fundamentals</b><small class="mono">ID D255083F1AFE8EC1</small></span><span class="mono">Jul 2026</span></li>
+            <li><span><b>Microsoft Power Up Program</b></span><span class="mono">Jul 2026</span></li>
+          </ul>
+        </article>
 
         <article class="awards card reveal">
-          <h3>Awards</h3>
+          <h3>Honors and awards</h3>
+          <p class="mini-title">College</p>
           <ul>
-            <li><span>2nd place, HackDuke 2026 (Interactive Media)</span><span class="mono">2026</span></li>
-            <li><span>Founding Student Advisory Board, Taco Bell Foundation</span><span class="mono">2026</span></li>
-            <li><span>Outstanding Teaching Assistant Award, Duke CS</span><span class="mono">2025</span></li>
-            <li><span>Taco Bell Live Más Scholar, 4x recipient</span><span class="mono">$20K</span></li>
-            <li><span>Morehead-Cain Scholarship Semifinalist</span><span class="mono">HS</span></li>
-            <li><span>ICTM Regional Champion (2x), State Top 10 (3x)</span><span class="mono">HS</span></li>
-            <li><span>Perfect scorer, IML and ICTM</span><span class="mono">HS</span></li>
-            <li><span>WSML MVP Math Leadership Award, Del Meítz–Thomas Nelson Outstanding Math Award</span><span class="mono">HS</span></li>
+            <li><span><b>2nd place, HackDuke 2026</b><small>ClassPulse, Interactive Media track</small></span><span class="mono">2026</span></li>
+            <li><span><b>Live Más Scholar, 4x recipient</b><small>1 of 300 from 10,000+ applicants, $20,000 total</small></span><span class="mono">2023–26</span></li>
+            <li><span><b>Founding Student Advisory Board</b><small>Taco Bell Foundation</small></span><span class="mono">2026</span></li>
+            <li><span><b>Dean's List with Distinction, 2x</b><small>Top 10% GPA in Trinity College</small></span><span class="mono">2024, 2025</span></li>
+            <li><span><b>Outstanding UTA Award, Duke CS</b><small>One of a few chosen from all CS undergraduate TAs</small></span><span class="mono">2025</span></li>
+            <li><span><b>Hometown Pride Scholarship finalist</b><small>27 of 1,789 submissions</small></span><span class="mono">2024</span></li>
+          </ul>
+          <p class="mini-title">Before college</p>
+          <ul>
+            <li><span><b>Morehead-Cain Scholarship semifinalist</b><small>Under 1% of UNC applicants, ~$320K full ride</small></span><span class="mono">2022</span></li>
+            <li><span><b>Del Meítz–Thomas Nelson Award</b><small>1 of 670 students, for leadership in math</small></span><span class="mono">2023</span></li>
+            <li><span><b>York PTA Scholar</b><small>20 of 670 students</small></span><span class="mono">2023</span></li>
+            <li><span><b>ICTM regional and state math awards</b><small>Regional 1st individual (2x), state 6th, a school record</small></span><span class="mono">2021–23</span></li>
+            <li><span><b>WSML Math MVP, IML and ICTM perfect scorer</b><small>West Suburban Math League, Illinois Math League</small></span><span class="mono">2023</span></li>
+            <li><span><b>UIC Mathematics Young Scholar</b><small>Summer program in cryptography</small></span><span class="mono">2022</span></li>
           </ul>
         </article>
 
@@ -525,30 +604,24 @@
             <p>SwiftUI, HealthKit, React, Next.js, Flutter, Flask, Unity, Unreal Engine, Godot</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
-      <div class="wrap">
+      <!-- Contact -->
+      <section class="sec" id="contact" aria-labelledby="contact-title">
+        <h2 class="kicker"><span>06</span>Contact</h2>
         <div class="contact card reveal">
-          <div class="contact__intro">
-            <p class="kicker"><span>05</span>Contact</p>
-            <h2 id="contact-title">Let's build something.</h2>
-            <p class="section__sub">Hiring for 2027, or want to talk about agents, MCP or iOS? Send a note.</p>
-            <div class="contact__links">
-              <a class="btn" href="https://www.linkedin.com/in/hallaidan" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
-              <a class="btn" href="https://github.com/DukeAidanHall" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
-              <a class="btn" href="Aidan_Hall_Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg>Resume</a>
-            </div>
-          </div>
+          <h3 class="contact__title" id="contact-title">Let's build something.</h3>
+          <p class="contact__sub">Hiring for 2027, or want to talk about agents, MCP or iOS? Send a note.</p>
           <form class="form" id="contact-form" novalidate>
-            <div class="field">
-              <label for="cf-name">Name</label>
-              <input id="cf-name" name="name" type="text" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="cf-email">Email</label>
-              <input id="cf-email" name="email" type="email" autocomplete="email" required>
+            <div class="form__pair">
+              <div class="field">
+                <label for="cf-name">Name</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="cf-email">Email</label>
+                <input id="cf-email" name="email" type="email" autocomplete="email" required>
+              </div>
             </div>
             <div class="field">
               <label for="cf-message">Message</label>
@@ -563,17 +636,20 @@
               <p class="form__status" role="status" aria-live="polite"></p>
             </div>
           </form>
+          <div class="contact__links">
+            <a class="btn btn--sm" href="https://www.linkedin.com/in/hallaidan" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+            <a class="btn btn--sm" href="https://github.com/DukeAidanHall" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+            <a class="btn btn--sm" href="Aidan_Hall_Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg>Resume</a>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer class="footer">
-    <div class="wrap footer__inner">
-      <p>© <span data-year>2026</span> Aidan Hall</p>
-      <p class="mono footer__meta"><span>Hand-built, no framework</span><span data-perf></span><button type="button" class="link-btn" data-cmdk-open><kbd data-mod-key>Ctrl K</kbd> to jump anywhere</button></p>
-    </div>
-  </footer>
+      <footer class="footer">
+        <p>Hand-built with HTML, CSS and vanilla JS, no framework. Layout ideas borrowed from Brittany Chiang, Anthony Fu, Hamish Williams and Onur Şuyalçınkaya.</p>
+        <p class="mono footer__meta"><span>© <span data-year>2026</span> Aidan Hall</span><span data-perf></span><button type="button" class="link-btn" data-cmdk-open><kbd data-mod-key>Ctrl K</kbd> to jump anywhere</button></p>
+      </footer>
+    </main>
+  </div>
 
   <dialog class="cmdk" id="cmdk" aria-label="Command menu">
     <div class="cmdk__search">
@@ -582,7 +658,7 @@
       <kbd>esc</kbd>
     </div>
     <ul class="cmdk__list" id="cmdk-list" role="listbox" aria-label="Results"></ul>
-    <p class="cmdk__foot mono"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span><span><kbd>t</kbd> theme</span></p>
+    <p class="cmdk__foot mono"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span><span><kbd>1</kbd>–<kbd>6</kbd> sections</span><span><kbd>t</kbd> theme</span></p>
   </dialog>
 </body>
 </html>
