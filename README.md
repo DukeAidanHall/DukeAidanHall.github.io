@@ -1,86 +1,38 @@
-# Aidan Hall - Modern Portfolio Website
+# dukeaidanhall.github.io
 
-A cutting-edge, tech-oriented personal portfolio showcasing my expertise in Computer Science, Mathematics, AI development, and software engineering.
+Personal site of Aidan Hall. Live at https://dukeaidanhall.github.io/
 
-## 🚀 Features
+Hand-written HTML, CSS and JavaScript. No framework, no build step, no dependencies.
 
-### Modern Design
-- **Dark Theme**: Sleek dark interface with neon blue and purple accents
-- **Particle Background**: Interactive particle system using Particles.js
-- **Terminal Loading Screen**: Retro terminal-style loading animation
-- **Responsive Design**: Fully responsive across all devices
+## What's in it
 
-### Advanced Animations
-- **Typing Animation**: Dynamic text typing effect for hero section
-- **Scroll Animations**: Smooth reveal animations for sections
-- **Parallax Effects**: Subtle parallax scrolling for depth
-- **Hover Effects**: Interactive hover animations on cards and buttons
-- **Timeline Animations**: Animated timeline for experience and education
+- `index.html`: the whole site, one page.
+- `assets/css/site.css`: design tokens, light and dark themes, layout.
+- `assets/js/site.js`: everything interactive (below).
+- `Aidan_Hall_Resume.pdf`: current resume, linked from the hero.
+- `llms.txt`, `robots.txt`, `sitemap.xml`: plain-text summary for AI agents, crawler rules, sitemap.
+- `404.html`: GitHub Pages serves this for missing paths.
 
-### Interactive Elements
-- **Particle Interactions**: Click and hover effects on background particles
-- **Smooth Navigation**: Smooth scrolling with active section highlighting
-- **Mobile Menu**: Animated hamburger menu for mobile devices
-- **Contact Form**: Functional contact form with validation
-- **Code Syntax Highlighting**: Syntax highlighting for code snippets
+## Features
 
-### Tech Stack
-- **HTML5**: Semantic markup
-- **CSS3**: Modern CSS with custom properties and animations
-- **JavaScript (ES6+)**: Advanced interactions and animations
-- **Particles.js**: Interactive particle background
-- **Font Awesome**: Icon library
-- **Google Fonts**: JetBrains Mono and Inter fonts
+- Command palette (`⌘K` / `Ctrl K` or `/`) with fuzzy search over sections, projects, roles and links. Doubles as the mobile menu.
+- Live status card: Marrow's App Store version and the `marrow-mcp` PyPI release are fetched from the public iTunes and PyPI APIs on load, cached for 20 minutes, with static fallbacks.
+- Marrow architecture diagram: HTML boxes, with SVG wires measured and drawn at runtime and animated with the Web Animations API. Hover or focus a box to trace its connections.
+- Hero dot field on a canvas: batched draw calls, paused when off screen or in a background tab.
+- Light and dark themes that follow the system, with a manual toggle (`t`) that reveals through a View Transition.
+- Project filters animated with View Transitions.
+- Contact form through EmailJS, loaded only when the form is first used, with a honeypot field.
+- Respects `prefers-reduced-motion`. Content is fully visible without JavaScript.
 
-## 📁 File Structure
+## Editing
 
-```
-DukeAidanHall.github.io/
-├── index.html          # Main portfolio page
-├── animations.css      # Modern styling and animations
-├── animations.js       # Interactive functionality
-├── images/            # Portfolio images
-└── README.md          # Documentation
+Open `index.html` and change the text. Experience entries and project cards are plain HTML blocks, copy one to add another.
+Anything with `data-cmdk="..."` shows up in the command palette automatically.
+
+To preview locally:
+
+```sh
+python3 -m http.server 8000
 ```
 
-## 🎨 Design Features
-
-### Color Scheme
-- **Primary Background**: Deep black (#0a0a0a)
-- **Secondary Background**: Dark gray (#111111)
-- **Primary Accent**: Cyan blue (#00d4ff)
-- **Secondary Accent**: Hot pink (#ff006e)
-- **Tertiary Accent**: Purple (#7b2cbf)
-- 
-### Layout
-- **Grid System**: CSS Grid for responsive layouts
-- **Flexbox**: Flexible component layouts
-- **Timeline**: Custom timeline design for experience/education
-- **Cards**: Hover-animated project and award cards
-
-## 📱 Responsive Breakpoints
-
-- **Desktop**: 1200px+
-- **Tablet**: 768px - 1199px
-- **Mobile**: 320px - 767px
-- **Small Mobile**: < 480px
-
-## 🎯 Sections
-
-1. **Hero**: Animated introduction with typing effect
-2. **About**: Personal description with key statistics
-3. **Education**: Timeline of academic achievements
-4. **Experience**: Professional experience timeline
-5. **Projects**: Featured projects with tech stack
-6. **Skills**: Technical skills with proficiency levels
-7. **Awards**: Recognition and achievements
-8. **Contact**: Contact information and form
-
-## 🌟 Performance Optimizations
-
-- **Throttled Scroll Events**: Optimized scroll performance
-- **Intersection Observer**: Efficient animation triggering
-- **CSS Transforms**: Hardware-accelerated animations
-- **Minified Dependencies**: Optimized external libraries
-
----
+Pushing to `main` deploys through GitHub Pages.

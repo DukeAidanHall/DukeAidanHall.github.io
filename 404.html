@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Not found · Aidan Hall</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    .nf { min-height: 100dvh; display: grid; place-items: center; padding: 24px; }
+    .nf__box { width: min(560px, 100%); }
+    .nf__code { color: var(--text-3); font: 500 13px/1.7 var(--mono); padding: 16px 18px; margin: 24px 0 28px; }
+    .nf__code b { color: var(--accent); font-weight: 500; }
+    .nf h1 { font-size: clamp(36px, 7vw, 56px); letter-spacing: -0.04em; line-height: 1; font-weight: 600; }
+    .nf p.lede { margin-top: 12px; color: var(--text-2); font-size: 17px; }
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <div class="nf__box">
+      <p class="kicker"><span>404</span>Not found</p>
+      <h1>This page doesn't exist.</h1>
+      <p class="lede">The link may be old. Everything lives on one page now.</p>
+      <pre class="nf__code card">$ curl -I <span id="nf-path">/missing</span>
+HTTP/2 <b>404</b>
+location: /</pre>
+      <a class="btn btn--primary" href="/">Back to the homepage</a>
+    </div>
+  </main>
+  <script>document.getElementById('nf-path').textContent = location.pathname;</script>
+</body>
+</html>

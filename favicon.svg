@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    rect { fill: #111113; }
+    text { fill: #fafaf9; }
+    @media (prefers-color-scheme: dark) { rect { fill: #ededef; } text { fill: #0a0a0b; } }
+  </style>
+  <rect width="64" height="64" rx="16"/>
+  <text x="32" y="42" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="27" font-weight="700" letter-spacing="-1">AH</text>
+</svg>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dukeaidanhall.github.io/sitemap.xml

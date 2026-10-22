@@ -1,0 +1,35 @@
+# Aidan Hall
+
+> Software and AI engineer. Duke University, B.S. Computer Science and B.S. Mathematics, May 2027 (GPA 3.9). Builds AI systems and ships products, most recently Marrow Health, an iOS app with 4,000+ users in its first seven weeks. Open to 2027 new-grad roles in software and AI engineering.
+
+- Site: https://dukeaidanhall.github.io/
+- Resume (PDF): https://dukeaidanhall.github.io/Aidan_Hall_Resume.pdf
+- LinkedIn: https://www.linkedin.com/in/hallaidan
+- GitHub: https://github.com/DukeAidanHall
+
+## Experience
+
+- UI/UX Intern, Taco Bell Foundation (Sep 2026 to now, remote). UX and educational resources for students graduating debt-free. Founding Student Advisory Board.
+- AI and DevOps Intern, MetLife (Jun to Aug 2026, Cary NC). Agentic platform that turns Azure DevOps requirements into production-ready GitHub pull requests with MCP tooling, cutting development time by up to 96%. AI red-team environments for prompt injection and data leakage. Large-scale document comparison systems.
+- Software Engineer Intern, Dexter Axle Company (May to Aug 2025, Lisle IL). Azure Functions and Dynamics 365 automation saving about 2,860 hours and $160K to $190K a year. Logic Apps and SQL Server pipeline rebuild with 80% lower latency.
+- Machine Learning Research Assistant, Duke University (Sep 2025 to May 2026). Duke ALIGN Initiative. Calibrated PJM wind generation model with 99.1% correlation to actual 2023 output.
+- Teaching Assistant, Duke CS and Math (2025). Four courses, 150+ students a semester. Duke 2025 Outstanding TA Award.
+
+## Marrow Health
+
+- App Store: https://apps.apple.com/us/app/marrow-health-calorie-counter/id6800819435
+- Website: https://marrowhealthapp.com/
+- MCP server: https://github.com/skeletonarmytech/marrow-mcp (PyPI: marrow-mcp)
+- Calorie counter and Apple Health hub for iPhone, Apple Watch and widgets, built solo in Swift and SwiftUI.
+- Open source MCP server plus a hosted OAuth 2.1 relay that lets ChatGPT, Claude and Gemini query 115+ Apple Health data types.
+- Release pipeline runs without a Mac on GitHub Actions with fastlane, gated by a 1,590-assertion test suite.
+
+## Other projects
+
+- ClassPulse: 2nd place, HackDuke 2026. Real-time classroom intelligence with React, OpenAI, Gemini, Remotion and ElevenLabs.
+- SpeakSeeker: co-founder of a speaker and event marketplace (Next.js, Supabase, Stripe, OpenAI).
+- Pipelined CPU on an FPGA (Verilog), conference recommender (PyTorch), index calculus solver (Python), C(n,k)ombiEval7 poker evaluator (Flutter), CATGETMOUSE interpreter (Java).
+
+## Skills
+
+Python, TypeScript, JavaScript, Swift, Java, C, C#, SQL, Dart, Verilog. MCP servers, agentic workflows, LLM red teaming, PyTorch. Azure, Cloudflare Workers, Supabase, GitHub Actions, Docker. SwiftUI, HealthKit, React, Next.js, Flutter.
