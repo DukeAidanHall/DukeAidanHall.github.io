@@ -19,7 +19,7 @@
 
 - App Store: https://apps.apple.com/us/app/marrow-health-calorie-counter/id6800819435
 - Website: https://marrowhealthapp.com/
-- MCP server: https://github.com/skeletonarmytech/marrow-mcp (PyPI: marrow-mcp)
+- MCP server: https://github.com/MarrowHealth/marrow-mcp (PyPI: marrow-mcp)
 - Calorie counter and Apple Health hub for iPhone, Apple Watch and widgets, built solo in Swift and SwiftUI.
 - Open source MCP server plus a hosted OAuth 2.1 relay that lets ChatGPT, Claude and Gemini query 115+ Apple Health data types.
 - Release pipeline runs without a Mac on GitHub Actions with fastlane, gated by a 1,590-assertion test suite.

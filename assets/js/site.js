@@ -447,7 +447,7 @@
     { group: 'Links', label: 'LinkedIn', hint: 'hallaidan', icon: 'linkedin', href: 'https://www.linkedin.com/in/hallaidan' },
     { group: 'Links', label: 'Marrow on the App Store', icon: 'arrow', href: 'https://apps.apple.com/us/app/marrow-health-calorie-counter/id6800819435' },
     { group: 'Links', label: 'marrowhealthapp.com', icon: 'arrow', href: 'https://marrowhealthapp.com/' },
-    { group: 'Links', label: 'marrow-mcp source code', icon: 'github', href: 'https://github.com/skeletonarmytech/marrow-mcp' },
+    { group: 'Links', label: 'marrow-mcp source code', icon: 'github', href: 'https://github.com/MarrowHealth/marrow-mcp' },
     { group: 'Links', label: 'ClassPulse on Devpost', icon: 'arrow', href: 'https://devpost.com/software/classpulse-tj0s2p' },
     { group: 'Actions', label: 'Toggle light and dark theme', hint: 't', icon: 'sun', run: () => toggleTheme() },
     { group: 'Actions', label: 'Show the long bio', icon: 'file', run: () => { selectTab($('#bio-tab-long')); goTo($('#about')); } },
